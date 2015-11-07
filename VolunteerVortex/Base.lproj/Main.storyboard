@@ -284,7 +284,7 @@
                                                     <rect key="frame" x="28" y="47" width="544" height="44.5"/>
                                                     <animations/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <string key="text">This is a brief description of what the event will be for. This data is sent to the app as JSON that's pulled from the database.</string>
+                                                    <mutableString key="text">This is a brief description of what the event will be for. This data is sent to the app as JSON that's pulled from the database. This is a brief description of what the event will be for. This data is sent to the app as JSON that's pulled from the database.This is a brief description of what the event will be for. This data is sent to the app as JSON that's pulled from the database.This is a brief description of what the event will be for. This data is sent to the app as JSON that's pulled from the database.</mutableString>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 </textView>
