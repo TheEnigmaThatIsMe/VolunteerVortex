@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="VwK-ZJ-EWm">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="VwK-ZJ-EWm">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
@@ -9,7 +9,7 @@
         <!--Profile-->
         <scene sceneID="lah-sD-Wts">
             <objects>
-                <viewController id="480-02-Y5L" sceneMemberID="viewController">
+                <viewController id="480-02-Y5L" customClass="ProfileViewController" customModule="VolunteerVortex" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="v2v-NM-BVJ"/>
                         <viewControllerLayoutGuide type="bottom" id="gv2-Eo-V8m"/>
@@ -51,11 +51,12 @@
                                 <animations/>
                                 <state key="normal" title="Edit Profile"/>
                                 <connections>
+                                    <action selector="editProfileButton:" destination="480-02-Y5L" eventType="touchUpInside" id="NTk-o4-aO4"/>
                                     <segue destination="dcv-zl-Wmz" kind="show" id="xTe-Qm-IFB"/>
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="JaF-Sb-JQP">
-                                <rect key="frame" x="0.0" y="235.5" width="600" height="123"/>
+                                <rect key="frame" x="0.0" y="242.5" width="600" height="123"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -65,8 +66,8 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="tV9-y1-He4">
-                                <rect key="frame" x="0.0" y="366.5" width="600" height="184.5"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="tV9-y1-He4">
+                                <rect key="frame" x="0.0" y="380.5" width="600" height="219.5"/>
                                 <animations/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="BT1-Fa-PoP">
                                     <size key="itemSize" width="50" height="50"/>
@@ -99,9 +100,9 @@
                             <constraint firstItem="SxB-zV-ATh" firstAttribute="leading" secondItem="eYB-ER-UiK" secondAttribute="leading" id="Ibg-u2-QZs"/>
                             <constraint firstItem="wZc-Wr-g2p" firstAttribute="leading" secondItem="eYB-ER-UiK" secondAttribute="leadingMargin" id="KfX-AN-quN"/>
                             <constraint firstItem="DuQ-38-dZa" firstAttribute="top" secondItem="SxB-zV-ATh" secondAttribute="bottom" constant="8" id="LPt-7H-eNW"/>
-                            <constraint firstItem="JaF-Sb-JQP" firstAttribute="top" secondItem="bWD-cV-on8" secondAttribute="bottom" constant="8" id="Yl3-AT-3ID"/>
+                            <constraint firstItem="JaF-Sb-JQP" firstAttribute="top" secondItem="bWD-cV-on8" secondAttribute="bottom" constant="15" id="Yl3-AT-3ID"/>
                             <constraint firstAttribute="trailing" secondItem="tV9-y1-He4" secondAttribute="trailing" id="aKv-LW-HAW"/>
-                            <constraint firstItem="tV9-y1-He4" firstAttribute="top" secondItem="JaF-Sb-JQP" secondAttribute="bottom" constant="8" id="cBt-Dm-gdV"/>
+                            <constraint firstItem="tV9-y1-He4" firstAttribute="top" secondItem="JaF-Sb-JQP" secondAttribute="bottom" constant="15" id="cBt-Dm-gdV"/>
                             <constraint firstItem="SxB-zV-ATh" firstAttribute="top" secondItem="v2v-NM-BVJ" secondAttribute="bottom" constant="8" id="ed6-Ym-z9G"/>
                             <constraint firstItem="dKx-wz-PhI" firstAttribute="trailing" secondItem="eYB-ER-UiK" secondAttribute="trailingMargin" id="fqi-B0-Gub"/>
                             <constraint firstItem="wZc-Wr-g2p" firstAttribute="top" secondItem="DuQ-38-dZa" secondAttribute="bottom" constant="8" id="jr4-6b-ATD"/>
@@ -114,15 +115,23 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Profile" id="oKd-d3-fr6"/>
+                    <connections>
+                        <outlet property="aboutMeTextView" destination="JaF-Sb-JQP" id="O7H-mO-Qtw"/>
+                        <outlet property="ageLabel" destination="wZc-Wr-g2p" id="rSR-T0-uqc"/>
+                        <outlet property="locationLabel" destination="bWD-cV-on8" id="Wim-7m-NEJ"/>
+                        <outlet property="nameLabel" destination="DuQ-38-dZa" id="HbI-PX-SRg"/>
+                        <outlet property="organizationCollectionView" destination="tV9-y1-He4" id="chx-GD-vKr"/>
+                        <outlet property="profileImage" destination="SxB-zV-ATh" id="Axu-Hc-02P"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bSX-0i-dpM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="794" y="301"/>
         </scene>
-        <!--View Controller-->
+        <!--Edit Profile View Controller-->
         <scene sceneID="rcS-PX-qnI">
             <objects>
-                <viewController id="dcv-zl-Wmz" sceneMemberID="viewController">
+                <viewController id="dcv-zl-Wmz" customClass="EditProfileViewController" customModule="VolunteerVortex" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ISp-Ci-IXH"/>
                         <viewControllerLayoutGuide type="bottom" id="BWP-JG-eXG"/>
@@ -136,6 +145,7 @@
                                 <animations/>
                                 <state key="normal" title="Cancel"/>
                                 <connections>
+                                    <action selector="cancelButton:" destination="dcv-zl-Wmz" eventType="touchUpInside" id="kwV-Ig-mDb"/>
                                     <segue destination="480-02-Y5L" kind="show" id="aMq-hK-VFq"/>
                                 </connections>
                             </button>
@@ -143,6 +153,9 @@
                                 <rect key="frame" x="546" y="28" width="34" height="30"/>
                                 <animations/>
                                 <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="saveButton:" destination="dcv-zl-Wmz" eventType="touchUpInside" id="cfc-p1-2dC"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Edit My Profile" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5QW-3E-mnw">
                                 <rect key="frame" x="245" y="37" width="110.5" height="20.5"/>
@@ -225,10 +238,14 @@
                             <constraint firstItem="eEN-M1-bX1" firstAttribute="top" secondItem="5QW-3E-mnw" secondAttribute="bottom" constant="46" id="xti-gL-FX8"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="agePicker" destination="abj-65-9NC" id="vTc-PL-EXb"/>
+                        <outlet property="statePicker" destination="w2k-xk-AR5" id="T5x-4t-c2l"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wkS-Ar-ADE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1472" y="301"/>
+            <point key="canvasLocation" x="1495" y="301"/>
         </scene>
         <!--Volunteer-->
         <scene sceneID="7yS-SK-9fP">
@@ -246,12 +263,12 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pJj-28-I74" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="794" y="-404"/>
+            <point key="canvasLocation" x="794" y="-426"/>
         </scene>
         <!--Volunteer-->
         <scene sceneID="Ad1-rB-W0F">
             <objects>
-                <viewController id="aeL-OR-7rE" sceneMemberID="viewController">
+                <viewController id="aeL-OR-7rE" customClass="VolunteerViewController" customModule="VolunteerVortex" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ia6-Mu-hL5"/>
                         <viewControllerLayoutGuide type="bottom" id="444-u4-u2M"/>
@@ -315,6 +332,9 @@
                                     <segment title="Opportunities"/>
                                     <segment title="Interests"/>
                                 </segments>
+                                <connections>
+                                    <action selector="opportunitiesSegmentedControl:" destination="aeL-OR-7rE" eventType="valueChanged" id="Haa-Lx-bfo"/>
+                                </connections>
                             </segmentedControl>
                         </subviews>
                         <animations/>
@@ -335,7 +355,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CQv-1h-6eZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1472" y="-404"/>
+            <point key="canvasLocation" x="1472" y="-426"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="jBm-yc-S3x">
@@ -354,7 +374,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8b3-Gz-RIo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2112" y="-404"/>
+            <point key="canvasLocation" x="2148" y="-426"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Ua2-WE-Ucd">
@@ -380,7 +400,7 @@
         <!--Settings-->
         <scene sceneID="00b-SO-iWX">
             <objects>
-                <viewController id="vhg-db-HMJ" sceneMemberID="viewController">
+                <viewController id="vhg-db-HMJ" customClass="SettingsViewController" customModule="VolunteerVortex" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="hbZ-uA-PD8"/>
                         <viewControllerLayoutGuide type="bottom" id="6jh-a7-JaJ"/>
@@ -400,7 +420,7 @@
         <!--My Service-->
         <scene sceneID="LlR-4v-s24">
             <objects>
-                <viewController id="jy1-5o-bNL" sceneMemberID="viewController">
+                <viewController id="jy1-5o-bNL" customClass="MyServiceViewController" customModule="VolunteerVortex" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ngb-nJ-pTJ"/>
                         <viewControllerLayoutGuide type="bottom" id="Qvg-2E-s5B"/>
