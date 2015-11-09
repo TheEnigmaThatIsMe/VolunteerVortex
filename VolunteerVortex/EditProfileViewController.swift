@@ -1,19 +1,25 @@
 //
-//  VolunteerViewController.swift
+//  EditProfileViewController.swift
 //  VolunteerVortex
 //
-//  Created by Joseph Trammel on 11/7/15.
+//  Created by George Gilmartin on 11/9/15.
 //  Copyright © 2015 George Gilmartin. All rights reserved.
 //
 
 import UIKit
 
-class VolunteerViewController: UIViewController {
-    @IBAction func opportunitiesSegmentedControl(sender: AnyObject) {
+class EditProfileViewController: UIViewController {
+
+    @IBAction func cancelButton(sender: AnyObject) {
     }
     
+    @IBAction func saveButton(sender: AnyObject) {
+    }
     
-
+    @IBOutlet weak var agePicker: UIPickerView!
+    @IBOutlet weak var statePicker: UIPickerView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

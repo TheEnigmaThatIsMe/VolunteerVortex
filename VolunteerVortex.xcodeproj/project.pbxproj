@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		86995AD41BF0E2F000905BFC /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86995AD31BF0E2F000905BFC /* EditProfileViewController.swift */; };
 		86D866201BEE92D8008E5558 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D8661F1BEE92D8008E5558 /* AppDelegate.swift */; };
 		86D866251BEE92D8008E5558 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86D866231BEE92D8008E5558 /* Main.storyboard */; };
 		86D866281BEE92D8008E5558 /* VolunteerVortex.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 86D866261BEE92D8008E5558 /* VolunteerVortex.xcdatamodeld */; };
@@ -38,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		86995AD31BF0E2F000905BFC /* EditProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		86D8661C1BEE92D8008E5558 /* VolunteerVortex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VolunteerVortex.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		86D8661F1BEE92D8008E5558 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		86D866241BEE92D8008E5558 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 				FD9075CE1BEE9E3D003E14D0 /* ProfileViewController.swift */,
 				FD9075D01BEE9E50003E14D0 /* MyServiceViewController.swift */,
 				FD9075D21BEE9E5D003E14D0 /* SettingsViewController.swift */,
+				86995AD31BF0E2F000905BFC /* EditProfileViewController.swift */,
 			);
 			path = VolunteerVortex;
 			sourceTree = "<group>";
@@ -274,6 +277,7 @@
 				FD9075D11BEE9E50003E14D0 /* MyServiceViewController.swift in Sources */,
 				86D866201BEE92D8008E5558 /* AppDelegate.swift in Sources */,
 				FD9075D31BEE9E5D003E14D0 /* SettingsViewController.swift in Sources */,
+				86995AD41BF0E2F000905BFC /* EditProfileViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
