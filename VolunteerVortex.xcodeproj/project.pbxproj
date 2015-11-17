@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		670EF4481BFBB7270087D4D5 /* OrganizationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 670EF4471BFBB7270087D4D5 /* OrganizationCell.swift */; };
+		670EF44A1BFBB7860087D4D5 /* OpportunitiesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 670EF4491BFBB7860087D4D5 /* OpportunitiesCell.swift */; };
+		670EF44C1BFBB79E0087D4D5 /* InterestsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 670EF44B1BFBB79E0087D4D5 /* InterestsCell.swift */; };
 		86995AD41BF0E2F000905BFC /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86995AD31BF0E2F000905BFC /* EditProfileViewController.swift */; };
 		86D866201BEE92D8008E5558 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D8661F1BEE92D8008E5558 /* AppDelegate.swift */; };
 		86D866251BEE92D8008E5558 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86D866231BEE92D8008E5558 /* Main.storyboard */; };
@@ -39,6 +42,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		670EF4471BFBB7270087D4D5 /* OrganizationCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrganizationCell.swift; sourceTree = "<group>"; };
+		670EF4491BFBB7860087D4D5 /* OpportunitiesCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpportunitiesCell.swift; sourceTree = "<group>"; };
+		670EF44B1BFBB79E0087D4D5 /* InterestsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InterestsCell.swift; sourceTree = "<group>"; };
 		86995AD31BF0E2F000905BFC /* EditProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		86D8661C1BEE92D8008E5558 /* VolunteerVortex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VolunteerVortex.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		86D8661F1BEE92D8008E5558 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -118,6 +124,9 @@
 				FD9075D01BEE9E50003E14D0 /* MyServiceViewController.swift */,
 				FD9075D21BEE9E5D003E14D0 /* SettingsViewController.swift */,
 				86995AD31BF0E2F000905BFC /* EditProfileViewController.swift */,
+				670EF4471BFBB7270087D4D5 /* OrganizationCell.swift */,
+				670EF4491BFBB7860087D4D5 /* OpportunitiesCell.swift */,
+				670EF44B1BFBB79E0087D4D5 /* InterestsCell.swift */,
 			);
 			path = VolunteerVortex;
 			sourceTree = "<group>";
@@ -277,6 +286,9 @@
 				FD9075D11BEE9E50003E14D0 /* MyServiceViewController.swift in Sources */,
 				86D866201BEE92D8008E5558 /* AppDelegate.swift in Sources */,
 				FD9075D31BEE9E5D003E14D0 /* SettingsViewController.swift in Sources */,
+				670EF4481BFBB7270087D4D5 /* OrganizationCell.swift in Sources */,
+				670EF44C1BFBB79E0087D4D5 /* InterestsCell.swift in Sources */,
+				670EF44A1BFBB7860087D4D5 /* OpportunitiesCell.swift in Sources */,
 				86995AD41BF0E2F000905BFC /* EditProfileViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
