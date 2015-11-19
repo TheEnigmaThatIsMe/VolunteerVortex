@@ -17,17 +17,17 @@ class VolunteerViewController: UIViewController, UITableViewDataSource, UITableV
     @IBAction func opportunitiesSegmentedControl(sender: UISegmentedControl) {
         
         //Load info to put in table View
-        
+        print(sender.selectedSegmentIndex)
         //This should refresh the table view
         table.reloadData()
 
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        table.delegate = self
+        table.dataSource = self
         
-        //Initial Loading of Data
-
-        
+        print("VolunteerViewController")
     }
     /*
     The following functions are necessary for using the table views
@@ -37,13 +37,30 @@ class VolunteerViewController: UIViewController, UITableViewDataSource, UITableV
         return 1
     }
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        return 0; //count of items in table, must have data to know
+        print("number of rows")
+        return 20; //count of items in table, must have data to know
     }
-    
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        
+        var height : CGFloat
+        
+        switch (segmentedControl.selectedSegmentIndex)
+        {
+        case 0:
+            height = 70
+        case 1:
+            height = 70
+        case 2:
+            height = 70
+        default:
+            height = 100
+        }
+        
+        return height
+    }
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        
+        print("cellForRowAtIndexPath")
         //decide which table to build
         
         var cell : UITableViewCell!;
@@ -52,18 +69,38 @@ class VolunteerViewController: UIViewController, UITableViewDataSource, UITableV
         {
         case 0:
             cell = tableView.dequeueReusableCellWithIdentifier("organizations")
+            let orgCell = cell as! OrganizationCell
+            
             //organization specific code
+            orgCell.title.text = "Organization Cell"
+            
+            //Reasigning to cell variable
+            cell = orgCell
+            
         case 1:
             cell = tableView.dequeueReusableCellWithIdentifier("opportunities")
+            let oppCell = cell as! OpportunitiesCell
+            
             //oppurtunity specific code
+            oppCell.title.text = "Oppurtunities Cell"
+            
+            //Reasigning to cell variable
+            cell = oppCell
         case 2:
             cell = tableView.dequeueReusableCellWithIdentifier("interests")
+            let intCell = cell as! InterestsCell
+            
             //interest specific code
+            intCell.title.text = "Interests Cell"
+            
+            //Reasigning to cell variable
+            cell = intCell
         default:
             print("no Data")
             //should print error message, etc.
         }
         
+        print("Returning Cell")
         return cell; //return the cell
     }
     /*
