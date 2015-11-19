@@ -1,4 +1,7 @@
-[
+{
+"status": "ok",
+"organizations":[
+
 	{
 		"name": "Habitat for Humanity",
 		"email": "habitat@humanity.edu",
@@ -46,3 +49,4 @@
 		"id": 1
 	}
 ]
+}
