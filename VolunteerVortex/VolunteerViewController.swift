@@ -10,6 +10,8 @@ import UIKit
 
 class VolunteerViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
+    let organizationCollection = OrganizationCollection.sharedInstance //get data from OrganizationCollection.swift
+    var filteredOrganizations: [Organization]!
     //need to get data that has been loaded or load data from json to use
     
     @IBOutlet weak var segmentedControl: UISegmentedControl!
@@ -27,7 +29,8 @@ class VolunteerViewController: UIViewController, UITableViewDataSource, UITableV
         table.delegate = self
         table.dataSource = self
         
-        print("VolunteerViewController")
+        filteredOrganizations = organizationCollection.organizations
+        print(filteredOrganizations.count)
     }
     /*
     The following functions are necessary for using the table views
@@ -38,7 +41,17 @@ class VolunteerViewController: UIViewController, UITableViewDataSource, UITableV
     }
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         print("number of rows")
-        return 20; //count of items in table, must have data to know
+        switch (segmentedControl.selectedSegmentIndex)
+        {
+        case 0:
+            return filteredOrganizations.count
+        case 1:
+            return 20 // count of items in table, must have data to know
+        case 2:
+            return 20 // count of items in table, must have data to know
+        default:
+            return 20
+        }
     }
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         
@@ -70,9 +83,19 @@ class VolunteerViewController: UIViewController, UITableViewDataSource, UITableV
         case 0:
             cell = tableView.dequeueReusableCellWithIdentifier("organizations")
             let orgCell = cell as! OrganizationCell
+            print(filteredOrganizations.count)
+            
+            let organization = filteredOrganizations[indexPath.row]
+            orgCell.title.text = organization.organizationName
+            orgCell.about.text = organization.description
+            
+            orgCell.accessoryType = .DisclosureIndicator
+            
+            //return orgCell
+
             
             //organization specific code
-            orgCell.title.text = "Organization Cell"
+            //orgCell.title.text = "Organization Cell"
             
             //Reasigning to cell variable
             cell = orgCell
@@ -80,6 +103,7 @@ class VolunteerViewController: UIViewController, UITableViewDataSource, UITableV
         case 1:
             cell = tableView.dequeueReusableCellWithIdentifier("opportunities")
             let oppCell = cell as! OpportunitiesCell
+        
             
             //oppurtunity specific code
             oppCell.title.text = "Oppurtunities Cell"
