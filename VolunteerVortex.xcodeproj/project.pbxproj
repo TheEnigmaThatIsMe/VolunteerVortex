@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		670EF4481BFBB7270087D4D5 /* OrganizationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 670EF4471BFBB7270087D4D5 /* OrganizationCell.swift */; };
+		670EF44A1BFBB7860087D4D5 /* OpportunitiesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 670EF4491BFBB7860087D4D5 /* OpportunitiesCell.swift */; };
+		670EF44C1BFBB79E0087D4D5 /* InterestsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 670EF44B1BFBB79E0087D4D5 /* InterestsCell.swift */; };
+		805A9E4F1BFE5C15003DA28E /* Organization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805A9E4E1BFE5C15003DA28E /* Organization.swift */; };
+		805A9E511BFE5C7F003DA28E /* OrganizationCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805A9E501BFE5C7F003DA28E /* OrganizationCollection.swift */; };
+		865492381BFE4DE1007008C1 /* organization.json in Resources */ = {isa = PBXBuildFile; fileRef = 865492371BFE4DE1007008C1 /* organization.json */; };
 		86995AD41BF0E2F000905BFC /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86995AD31BF0E2F000905BFC /* EditProfileViewController.swift */; };
 		86D866201BEE92D8008E5558 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D8661F1BEE92D8008E5558 /* AppDelegate.swift */; };
 		86D866251BEE92D8008E5558 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86D866231BEE92D8008E5558 /* Main.storyboard */; };
@@ -39,6 +45,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		670EF4471BFBB7270087D4D5 /* OrganizationCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrganizationCell.swift; sourceTree = "<group>"; };
+		670EF4491BFBB7860087D4D5 /* OpportunitiesCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpportunitiesCell.swift; sourceTree = "<group>"; };
+		670EF44B1BFBB79E0087D4D5 /* InterestsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InterestsCell.swift; sourceTree = "<group>"; };
+		805A9E4E1BFE5C15003DA28E /* Organization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Organization.swift; sourceTree = "<group>"; };
+		805A9E501BFE5C7F003DA28E /* OrganizationCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrganizationCollection.swift; sourceTree = "<group>"; };
+		865492371BFE4DE1007008C1 /* organization.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = organization.json; sourceTree = "<group>"; };
 		86995AD31BF0E2F000905BFC /* EditProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		86D8661C1BEE92D8008E5558 /* VolunteerVortex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VolunteerVortex.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		86D8661F1BEE92D8008E5558 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -107,6 +119,7 @@
 		86D8661E1BEE92D8008E5558 /* VolunteerVortex */ = {
 			isa = PBXGroup;
 			children = (
+				865492371BFE4DE1007008C1 /* organization.json */,
 				86D8661F1BEE92D8008E5558 /* AppDelegate.swift */,
 				86D866231BEE92D8008E5558 /* Main.storyboard */,
 				86D866291BEE92D8008E5558 /* Assets.xcassets */,
@@ -118,6 +131,11 @@
 				FD9075D01BEE9E50003E14D0 /* MyServiceViewController.swift */,
 				FD9075D21BEE9E5D003E14D0 /* SettingsViewController.swift */,
 				86995AD31BF0E2F000905BFC /* EditProfileViewController.swift */,
+				670EF4471BFBB7270087D4D5 /* OrganizationCell.swift */,
+				670EF4491BFBB7860087D4D5 /* OpportunitiesCell.swift */,
+				670EF44B1BFBB79E0087D4D5 /* InterestsCell.swift */,
+				805A9E4E1BFE5C15003DA28E /* Organization.swift */,
+				805A9E501BFE5C7F003DA28E /* OrganizationCollection.swift */,
 			);
 			path = VolunteerVortex;
 			sourceTree = "<group>";
@@ -246,6 +264,7 @@
 			files = (
 				86D8662D1BEE92D8008E5558 /* LaunchScreen.storyboard in Resources */,
 				86D8662A1BEE92D8008E5558 /* Assets.xcassets in Resources */,
+				865492381BFE4DE1007008C1 /* organization.json in Resources */,
 				86D866251BEE92D8008E5558 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -273,10 +292,15 @@
 			files = (
 				86D866281BEE92D8008E5558 /* VolunteerVortex.xcdatamodeld in Sources */,
 				FD9075CD1BEE9E2B003E14D0 /* VolunteerViewController.swift in Sources */,
+				805A9E4F1BFE5C15003DA28E /* Organization.swift in Sources */,
 				FD9075CF1BEE9E3D003E14D0 /* ProfileViewController.swift in Sources */,
 				FD9075D11BEE9E50003E14D0 /* MyServiceViewController.swift in Sources */,
 				86D866201BEE92D8008E5558 /* AppDelegate.swift in Sources */,
 				FD9075D31BEE9E5D003E14D0 /* SettingsViewController.swift in Sources */,
+				670EF4481BFBB7270087D4D5 /* OrganizationCell.swift in Sources */,
+				805A9E511BFE5C7F003DA28E /* OrganizationCollection.swift in Sources */,
+				670EF44C1BFBB79E0087D4D5 /* InterestsCell.swift in Sources */,
+				670EF44A1BFBB7860087D4D5 /* OpportunitiesCell.swift in Sources */,
 				86995AD41BF0E2F000905BFC /* EditProfileViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
