@@ -14,6 +14,7 @@ class VolunteerViewController: UIViewController, UITableViewDataSource, UITableV
     var filteredOrganizations: [Organization]!
     //need to get data that has been loaded or load data from json to use
     
+    @IBOutlet weak var volunteerTitleLabel: UILabel!
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     @IBOutlet weak var table: UITableView!
     @IBAction func opportunitiesSegmentedControl(sender: UISegmentedControl) {
@@ -81,6 +82,7 @@ class VolunteerViewController: UIViewController, UITableViewDataSource, UITableV
         switch (segmentedControl.selectedSegmentIndex)
         {
         case 0:
+            volunteerTitleLabel.text = "Organizations"
             cell = tableView.dequeueReusableCellWithIdentifier("organizations")
             let orgCell = cell as! OrganizationCell
             print(filteredOrganizations.count)
@@ -101,9 +103,10 @@ class VolunteerViewController: UIViewController, UITableViewDataSource, UITableV
             cell = orgCell
             
         case 1:
+            volunteerTitleLabel.text = "Opportunities"
             cell = tableView.dequeueReusableCellWithIdentifier("opportunities")
             let oppCell = cell as! OpportunitiesCell
-        
+            //print(filteredOpportunities.count)
             
             //oppurtunity specific code
             oppCell.title.text = "Oppurtunities Cell"
@@ -111,6 +114,7 @@ class VolunteerViewController: UIViewController, UITableViewDataSource, UITableV
             //Reasigning to cell variable
             cell = oppCell
         case 2:
+            volunteerTitleLabel.text = "Interests"
             cell = tableView.dequeueReusableCellWithIdentifier("interests")
             let intCell = cell as! InterestsCell
             
@@ -120,6 +124,7 @@ class VolunteerViewController: UIViewController, UITableViewDataSource, UITableV
             //Reasigning to cell variable
             cell = intCell
         default:
+            volunteerTitleLabel.text = "Error"
             print("no Data")
             //should print error message, etc.
         }
