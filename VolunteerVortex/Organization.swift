@@ -11,6 +11,7 @@ import Foundation
 class Organization{
     var organizationName: String = ""
     var description: String = ""
+    var events: Array<String> = []
     
     init(organizationName: String, description: String) {
         self.organizationName = organizationName
