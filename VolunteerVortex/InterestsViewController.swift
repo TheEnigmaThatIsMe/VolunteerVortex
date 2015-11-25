@@ -1,18 +1,18 @@
 //
-//  MyServiceViewController.swift
+//  InterestsViewController.swift
 //  VolunteerVortex
 //
-//  Created by Joseph Trammel on 11/7/15.
+//  Created by George Gilmartin on 11/22/15.
 //  Copyright © 2015 George Gilmartin. All rights reserved.
 //
 
 import UIKit
 
-class MyServiceViewController: UIViewController {
+class InterestsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "My Services"
+
         // Do any additional setup after loading the view.
     }
 
