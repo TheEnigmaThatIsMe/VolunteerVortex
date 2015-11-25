@@ -27,6 +27,7 @@ class VolunteerViewController: UIViewController, UITableViewDataSource, UITableV
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "Volunteer"
         table.delegate = self
         table.dataSource = self
         
@@ -82,7 +83,7 @@ class VolunteerViewController: UIViewController, UITableViewDataSource, UITableV
         switch (segmentedControl.selectedSegmentIndex)
         {
         case 0:
-            volunteerTitleLabel.text = "Organizations"
+            //self.title = "Organizations"
             cell = tableView.dequeueReusableCellWithIdentifier("organizations")
             let orgCell = cell as! OrganizationCell
             print(filteredOrganizations.count)
@@ -103,7 +104,7 @@ class VolunteerViewController: UIViewController, UITableViewDataSource, UITableV
             cell = orgCell
             
         case 1:
-            volunteerTitleLabel.text = "Opportunities"
+            //self.title = "Opportunities"
             cell = tableView.dequeueReusableCellWithIdentifier("opportunities")
             let oppCell = cell as! OpportunitiesCell
             //print(filteredOpportunities.count)
@@ -114,7 +115,7 @@ class VolunteerViewController: UIViewController, UITableViewDataSource, UITableV
             //Reasigning to cell variable
             cell = oppCell
         case 2:
-            volunteerTitleLabel.text = "Interests"
+            //self.title = "Interests"
             cell = tableView.dequeueReusableCellWithIdentifier("interests")
             let intCell = cell as! InterestsCell
             
