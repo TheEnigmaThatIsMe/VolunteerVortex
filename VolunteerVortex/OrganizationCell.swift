@@ -17,8 +17,8 @@ class OrganizationCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        title.text = "not loaded"
-        about.text = "not loaded"
+        //title.text = "not loaded"
+        //about.text = "not loaded"
     }
 
     override func setSelected(selected: Bool, animated: Bool) {

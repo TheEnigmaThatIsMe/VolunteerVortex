@@ -21,6 +21,7 @@ class EditProfileViewController: UIViewController,UIPickerViewDataSource,UIPicke
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "Edit My Profile"
         agePicker.dataSource = self
         agePicker.delegate = self
         statePicker.dataSource = self
