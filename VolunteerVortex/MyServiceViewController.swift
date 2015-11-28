@@ -12,7 +12,6 @@ class MyServiceViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "My Services"
         // Do any additional setup after loading the view.
     }
 
