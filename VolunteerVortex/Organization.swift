@@ -8,13 +8,26 @@
 
 import Foundation
 
-class Organization{
-    var organizationName: String = ""
-    var description: String = ""
-    var events: Array<String> = []
+class Organization {
+    var organizationName: String? = ""
+    var organizationEmail: String? = ""
+    var organizationPhone: String? = ""
+    var organizationAddress: String? = ""
+    var organizationCity: String? = ""
+    var organizationState: String? = ""
+    var organizationCategories: String? = ""
+    var organizationDescription: String? = ""
+    var organizationID: Int = 0
     
-    init(organizationName: String, description: String) {
+    init(organizationName: String, organizationEmail:String, organizationPhone: String, organizationAddress: String, organizationCity: String, organizationState: String,organizationCategories: String, organizationDescription: String, organizationID: Int) {
         self.organizationName = organizationName
-        self.description = description
+        self.organizationEmail = organizationEmail
+        self.organizationPhone = organizationPhone
+        self.organizationAddress = organizationAddress
+        self.organizationCity = organizationCity
+        self.organizationState = organizationState
+        self.organizationCategories = organizationCategories
+        self.organizationDescription = organizationDescription
+        self.organizationID = organizationID
     }
 }

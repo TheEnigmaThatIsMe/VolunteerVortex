@@ -12,6 +12,8 @@ class VolunteerViewController: UIViewController, UITableViewDataSource, UITableV
     
     let organizationCollection = OrganizationCollection.sharedInstance //get data from OrganizationCollection.swift
     var filteredOrganizations: [Organization]!
+    var filteredEvents: [Event]!
+    //var filteredTasks: [Task]!
     //need to get data that has been loaded or load data from json to use
     
     @IBOutlet weak var volunteerTitleLabel: UILabel!
@@ -20,7 +22,7 @@ class VolunteerViewController: UIViewController, UITableViewDataSource, UITableV
     @IBAction func opportunitiesSegmentedControl(sender: UISegmentedControl) {
         
         //Load info to put in table View
-        print(sender.selectedSegmentIndex)
+        //print(sender.selectedSegmentIndex)
         //This should refresh the table view
         table.reloadData()
 
@@ -28,12 +30,15 @@ class VolunteerViewController: UIViewController, UITableViewDataSource, UITableV
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Volunteer"
+        
         table.delegate = self
         table.dataSource = self
-        
+        organizationCollection.readJSON()
         filteredOrganizations = organizationCollection.organizations
-        print(filteredOrganizations.count)
+        filteredEvents = organizationCollection.events
+        //print(filteredOrganizations.count)
     }
+    
     /*
     The following functions are necessary for using the table views
 */
@@ -42,15 +47,15 @@ class VolunteerViewController: UIViewController, UITableViewDataSource, UITableV
         return 1
     }
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print("number of rows")
+        //print("number of rows")
         switch (segmentedControl.selectedSegmentIndex)
         {
         case 0:
             return filteredOrganizations.count
         case 1:
-            return 20 // count of items in table, must have data to know
+            return filteredEvents.count // count of items in table, must have data to know
         case 2:
-            return 20 // count of items in table, must have data to know
+            return 20//filteredTasks.count // count of items in table, must have data to know
         default:
             return 20
         }
@@ -75,7 +80,7 @@ class VolunteerViewController: UIViewController, UITableViewDataSource, UITableV
     }
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        print("cellForRowAtIndexPath")
+        //print("cellForRowAtIndexPath")
         //decide which table to build
         
         var cell : UITableViewCell!;
@@ -83,54 +88,54 @@ class VolunteerViewController: UIViewController, UITableViewDataSource, UITableV
         switch (segmentedControl.selectedSegmentIndex)
         {
         case 0:
-            //self.title = "Organizations"
             cell = tableView.dequeueReusableCellWithIdentifier("organizations")
             let orgCell = cell as! OrganizationCell
-            print(filteredOrganizations.count)
+            //print(filteredOrganizations.count)
             
             let organization = filteredOrganizations[indexPath.row]
-            orgCell.title.text = organization.organizationName
-            orgCell.about.text = organization.description
+            orgCell.organizationTitleLabel.text = organization.organizationName
+            orgCell.organizationCategoryLabel.text = organization.organizationCategories
+            //print(organization.organizationPhone)
             
             orgCell.accessoryType = .DisclosureIndicator
-            
-            //return orgCell
-
-            
-            //organization specific code
-            //orgCell.title.text = "Organization Cell"
             
             //Reasigning to cell variable
             cell = orgCell
             
         case 1:
-            //self.title = "Opportunities"
             cell = tableView.dequeueReusableCellWithIdentifier("opportunities")
             let oppCell = cell as! OpportunitiesCell
-            //print(filteredOpportunities.count)
+            //print(filteredEvents.count)
             
-            //oppurtunity specific code
-            oppCell.title.text = "Oppurtunities Cell"
+            let event = filteredEvents[indexPath.row]
             
+            
+            oppCell.opportunityTitleLabel.text = event.eventName
+            oppCell.opportunityDateLabel.text = event.eventStartTime
+            //oppCell.opportunityOrganizationLabel.text = organization.organizationName
+            
+            oppCell.accessoryType = .DisclosureIndicator
             //Reasigning to cell variable
             cell = oppCell
+            
         case 2:
             //self.title = "Interests"
             cell = tableView.dequeueReusableCellWithIdentifier("interests")
             let intCell = cell as! InterestsCell
             
             //interest specific code
-            intCell.title.text = "Interests Cell"
+            intCell.interestTitleLabel.text = "Interests Cell"
             
             //Reasigning to cell variable
             cell = intCell
+            
         default:
-            volunteerTitleLabel.text = "Error"
+            //volunteerTitleLabel.text = "Error"
             print("no Data")
             //should print error message, etc.
         }
         
-        print("Returning Cell")
+        //print("Returning Cell")
         return cell; //return the cell
     }
     /*

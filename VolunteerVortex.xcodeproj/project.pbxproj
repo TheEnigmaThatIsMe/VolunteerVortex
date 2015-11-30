@@ -13,11 +13,13 @@
 		805A9E4F1BFE5C15003DA28E /* Organization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805A9E4E1BFE5C15003DA28E /* Organization.swift */; };
 		805A9E511BFE5C7F003DA28E /* OrganizationCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805A9E501BFE5C7F003DA28E /* OrganizationCollection.swift */; };
 		865492381BFE4DE1007008C1 /* organization.json in Resources */ = {isa = PBXBuildFile; fileRef = 865492371BFE4DE1007008C1 /* organization.json */; };
+		8662E88A1C096CF900FD2270 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8662E8891C096CF900FD2270 /* Event.swift */; };
 		8672CDE01C060D5200583B07 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8672CDDF1C060D5200583B07 /* Assets.xcassets */; };
 		86995AD41BF0E2F000905BFC /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86995AD31BF0E2F000905BFC /* EditProfileViewController.swift */; };
 		869F739B1C0287B800C1395C /* OrganizatonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869F739A1C0287B800C1395C /* OrganizatonViewController.swift */; };
 		869F739D1C0288BB00C1395C /* OpportunitiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869F739C1C0288BB00C1395C /* OpportunitiesViewController.swift */; };
 		869F739F1C0288D500C1395C /* InterestsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869F739E1C0288D500C1395C /* InterestsViewController.swift */; };
+		86C078C91C09166500D875C8 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C078C81C09166500D875C8 /* SwiftyJSON.swift */; };
 		86D866201BEE92D8008E5558 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D8661F1BEE92D8008E5558 /* AppDelegate.swift */; };
 		86D866251BEE92D8008E5558 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86D866231BEE92D8008E5558 /* Main.storyboard */; };
 		86D866281BEE92D8008E5558 /* VolunteerVortex.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 86D866261BEE92D8008E5558 /* VolunteerVortex.xcdatamodeld */; };
@@ -54,11 +56,13 @@
 		805A9E4E1BFE5C15003DA28E /* Organization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Organization.swift; sourceTree = "<group>"; };
 		805A9E501BFE5C7F003DA28E /* OrganizationCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrganizationCollection.swift; sourceTree = "<group>"; };
 		865492371BFE4DE1007008C1 /* organization.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = organization.json; sourceTree = "<group>"; };
+		8662E8891C096CF900FD2270 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		8672CDDF1C060D5200583B07 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		86995AD31BF0E2F000905BFC /* EditProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		869F739A1C0287B800C1395C /* OrganizatonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrganizatonViewController.swift; sourceTree = "<group>"; };
 		869F739C1C0288BB00C1395C /* OpportunitiesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpportunitiesViewController.swift; sourceTree = "<group>"; };
 		869F739E1C0288D500C1395C /* InterestsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InterestsViewController.swift; sourceTree = "<group>"; };
+		86C078C81C09166500D875C8 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		86D8661C1BEE92D8008E5558 /* VolunteerVortex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VolunteerVortex.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		86D8661F1BEE92D8008E5558 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		86D866241BEE92D8008E5558 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -132,6 +136,7 @@
 				86D8662B1BEE92D8008E5558 /* LaunchScreen.storyboard */,
 				86D8662E1BEE92D8008E5558 /* Info.plist */,
 				869F739C1C0288BB00C1395C /* OpportunitiesViewController.swift */,
+				86C078C81C09166500D875C8 /* SwiftyJSON.swift */,
 				86D866261BEE92D8008E5558 /* VolunteerVortex.xcdatamodeld */,
 				869F739E1C0288D500C1395C /* InterestsViewController.swift */,
 				869F739A1C0287B800C1395C /* OrganizatonViewController.swift */,
@@ -144,6 +149,7 @@
 				670EF4491BFBB7860087D4D5 /* OpportunitiesCell.swift */,
 				670EF44B1BFBB79E0087D4D5 /* InterestsCell.swift */,
 				805A9E4E1BFE5C15003DA28E /* Organization.swift */,
+				8662E8891C096CF900FD2270 /* Event.swift */,
 				805A9E501BFE5C7F003DA28E /* OrganizationCollection.swift */,
 			);
 			path = VolunteerVortex;
@@ -307,9 +313,11 @@
 				805A9E4F1BFE5C15003DA28E /* Organization.swift in Sources */,
 				FD9075CF1BEE9E3D003E14D0 /* ProfileViewController.swift in Sources */,
 				FD9075D11BEE9E50003E14D0 /* MyServiceViewController.swift in Sources */,
+				8662E88A1C096CF900FD2270 /* Event.swift in Sources */,
 				86D866201BEE92D8008E5558 /* AppDelegate.swift in Sources */,
 				FD9075D31BEE9E5D003E14D0 /* SettingsViewController.swift in Sources */,
 				670EF4481BFBB7270087D4D5 /* OrganizationCell.swift in Sources */,
+				86C078C91C09166500D875C8 /* SwiftyJSON.swift in Sources */,
 				805A9E511BFE5C7F003DA28E /* OrganizationCollection.swift in Sources */,
 				670EF44C1BFBB79E0087D4D5 /* InterestsCell.swift in Sources */,
 				670EF44A1BFBB7860087D4D5 /* OpportunitiesCell.swift in Sources */,

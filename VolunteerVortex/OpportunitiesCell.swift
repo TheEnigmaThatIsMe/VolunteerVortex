@@ -9,8 +9,12 @@
 import UIKit
 
 class OpportunitiesCell: UITableViewCell {
-
-    @IBOutlet weak var title: UILabel!
+    
+    @IBOutlet weak var opportunityTitleLabel: UILabel!
+    @IBOutlet weak var opportunityOrganizationLabel: UILabel!
+    
+    @IBOutlet weak var opportunityDateLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
