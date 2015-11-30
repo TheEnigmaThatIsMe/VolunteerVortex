@@ -10,8 +10,8 @@ import UIKit
 
 class OrganizationCell: UITableViewCell {
 
-    @IBOutlet weak var title: UILabel!
-    @IBOutlet weak var about: UILabel!
+    @IBOutlet weak var organizationTitleLabel: UILabel!
+    @IBOutlet weak var organizationCategoryLabel: UILabel!
     
     
     override func awakeFromNib() {

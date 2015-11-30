@@ -10,11 +10,13 @@ import UIKit
 
 class InterestsCell: UITableViewCell {
 
-    @IBOutlet weak var title: UILabel!
+    
+    @IBOutlet weak var interestTitleLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        title.text = "not loaded"
+        interestTitleLabel.text = "not loaded"
         // Initialization code
     }
 
