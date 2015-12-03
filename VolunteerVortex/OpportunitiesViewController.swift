@@ -9,6 +9,9 @@
 import UIKit
 
 class OpportunitiesViewController: UIViewController {
+    @IBOutlet weak var eventTitleLabel: UILabel!
+    @IBOutlet weak var eventDescriptionLabel: UILabel!
+    @IBOutlet weak var eventsTableView: UITableView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
