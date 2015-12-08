@@ -10,6 +10,7 @@
 		"city": "Columbia",
 		"state": "MO",
 		"categories": "Animals",
+        "interest": "Homeless",
 		"events": [
 			{
 				"eventName": "Puppy Playground",
@@ -58,6 +59,7 @@
      "city": "Oswego",
      "state": "IL",
      "categories": "Food",
+     "interest": "Hunger",
      "events": [
                 {
                 "eventName": "Feed the Homeless",
