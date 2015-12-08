@@ -55,7 +55,7 @@ class VolunteerViewController: UIViewController, UITableViewDataSource, UITableV
         case 1:
             return filteredEvents.count // count of items in table, must have data to know
         case 2:
-            return 20 // count of items in table, must have data to know
+            return filteredOrganizations.count // count of items in table, must have data to know
         default:
             return 20
         }
@@ -123,8 +123,10 @@ class VolunteerViewController: UIViewController, UITableViewDataSource, UITableV
             cell = tableView.dequeueReusableCellWithIdentifier("interests")
             let intCell = cell as! InterestsCell
             
+            let organization = filteredOrganizations[indexPath.row]
             //interest specific code
-            intCell.interestTitleLabel.text = "Interests Cell"
+            intCell.interestTitleLabel.text = organization.organizationInterest
+            intCell.accessoryType = .DisclosureIndicator
             
             //Reasigning to cell variable
             cell = intCell

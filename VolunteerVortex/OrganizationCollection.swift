@@ -22,10 +22,10 @@ class OrganizationCollection{
                 let json = JSON(data: data)
                 if json != JSON.null {
                     for organization in json["organizations"].arrayValue {
-                        if let organizationName = organization["name"].string, organizationEmail = organization["email"].string, organizationPhone = organization["phone"].string, organizationAddress = organization["address"].string, organizationCity = organization["city"].string, organizationState = organization["state"].string, organizationCategories = organization["categories"].string, organizationDescription = organization["description"].string {
+                        if let organizationName = organization["name"].string, organizationEmail = organization["email"].string, organizationPhone = organization["phone"].string, organizationAddress = organization["address"].string, organizationCity = organization["city"].string, organizationState = organization["state"].string, organizationCategories = organization["categories"].string, organizationDescription = organization["description"].string, organizationInterest = organization["interest"].string {
                             let organizationID = organization["id"].intValue
                             self.organizations.append(Organization(organizationName: organizationName, organizationEmail: organizationEmail, organizationPhone: organizationPhone, organizationAddress: organizationAddress, organizationCity: organizationCity,
-                                organizationState: organizationState,organizationCategories: organizationCategories,organizationDescription: organizationDescription, organizationID: organizationID))
+                                organizationState: organizationState,organizationCategories: organizationCategories,organizationDescription: organizationDescription, organizationID: organizationID, organizationInterest: organizationInterest))
                         }
                         print("Organization Name: \(organization["name"].string!)")
                         print("Organization Email: \(organization["email"].string!)")
@@ -36,6 +36,8 @@ class OrganizationCollection{
                         print("Organization Category: \(organization["categories"].string!)")
                         print("Organization Description: \(organization["description"].string!)")
                         print("Organization ID: \(organization["id"].intValue)")
+                        print("Organization Interest: \(organization["interest"].string!)")
+
                         
                         for event in organization["events"].arrayValue {
                             if let organizationName = organization["name"].string, eventName = event["eventName"].string, eventAddress = event["address"].string, eventCity = event["city"].string, eventState = event["state"].string, eventStartTime = event["startTime"].string, eventEndTime = event["endTime"].string, eventCategories = event["categories"].string, eventDescription = event["description"].string {
