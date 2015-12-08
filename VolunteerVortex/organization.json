@@ -23,9 +23,9 @@
 				"volunteerLimit": 10,
 				"id": 1,
 				"task": [{
-					"name": "sed, sapien.",
-					"description": "Lorem",
-					"startTime": "12-12-14",
+					"name": "Puppy Play",
+					"description": "Play with puppies for an hour.",
+					"startTime": "3PM",
 					"id": 1
 				}]
 			},
@@ -41,9 +41,9 @@
 				"volunteerLimit": 10,
 				"id": 2,
 				"task": [{
-					"name": "sed, sapien.",
-					"description": "Lorem",
-					"startTime": "12-12-14",
+					"name": "Puppy Play",
+					"description": "Play with puppies for an hour.",
+					"startTime": "2PM",
 					"id": 1
 				}]
 		}],
