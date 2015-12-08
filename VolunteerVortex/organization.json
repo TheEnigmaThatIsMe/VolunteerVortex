@@ -10,6 +10,7 @@
 		"city": "Columbia",
 		"state": "MO",
 		"categories": "Animals",
+        "interest": "Homeless",
 		"events": [
 			{
 				"eventName": "Puppy Playground",
@@ -23,9 +24,9 @@
 				"volunteerLimit": 10,
 				"id": 1,
 				"task": [{
-					"name": "sed, sapien.",
-					"description": "Lorem",
-					"startTime": "12-12-14",
+					"name": "Puppy Play",
+					"description": "Play with puppies for an hour.",
+					"startTime": "3PM",
 					"id": 1
 				}]
 			},
@@ -41,9 +42,9 @@
 				"volunteerLimit": 10,
 				"id": 2,
 				"task": [{
-					"name": "sed, sapien.",
-					"description": "Lorem",
-					"startTime": "12-12-14",
+					"name": "Puppy Play",
+					"description": "Play with puppies for an hour.",
+					"startTime": "2PM",
 					"id": 1
 				}]
 		}],
@@ -58,6 +59,7 @@
      "city": "Oswego",
      "state": "IL",
      "categories": "Food",
+     "interest": "Hunger",
      "events": [
                 {
                 "eventName": "Feed the Homeless",
@@ -71,7 +73,7 @@
                 "volunteerLimit": 10,
                 "id": 1,
                 "task": [{
-                         "name": "sed, sapien.",
+                         "name": "Food Server",
                          "description": "Lorem",
                          "startTime": "12-12-14",
                          "id": 1
@@ -89,7 +91,7 @@
                 "volunteerLimit": 10,
                 "id": 2,
                 "task": [{
-                         "name": "sed, sapien.",
+                         "name": "Dish Cleaner",
                          "description": "Lorem",
                          "startTime": "12-12-14",
                          "id": 1

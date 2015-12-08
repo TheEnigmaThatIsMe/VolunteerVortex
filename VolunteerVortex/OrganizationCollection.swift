@@ -13,7 +13,7 @@ class OrganizationCollection{
     static let sharedInstance = OrganizationCollection()
     var organizations:[Organization] = Array<Organization>()
     var events: [Event] = Array<Event>()
-    //var tasks: [Task] = Array<Task>()
+    var tasks: [Task] = Array<Task>()
     
     func readJSON() {
         if let path = NSBundle.mainBundle().pathForResource("organization", ofType: "json") {
@@ -22,10 +22,10 @@ class OrganizationCollection{
                 let json = JSON(data: data)
                 if json != JSON.null {
                     for organization in json["organizations"].arrayValue {
-                        if let organizationName = organization["name"].string, organizationEmail = organization["email"].string, organizationPhone = organization["phone"].string, organizationAddress = organization["address"].string, organizationCity = organization["city"].string, organizationState = organization["state"].string, organizationCategories = organization["categories"].string, organizationDescription = organization["description"].string {
+                        if let organizationName = organization["name"].string, organizationEmail = organization["email"].string, organizationPhone = organization["phone"].string, organizationAddress = organization["address"].string, organizationCity = organization["city"].string, organizationState = organization["state"].string, organizationCategories = organization["categories"].string, organizationDescription = organization["description"].string, organizationInterest = organization["interest"].string {
                             let organizationID = organization["id"].intValue
                             self.organizations.append(Organization(organizationName: organizationName, organizationEmail: organizationEmail, organizationPhone: organizationPhone, organizationAddress: organizationAddress, organizationCity: organizationCity,
-                                organizationState: organizationState,organizationCategories: organizationCategories,organizationDescription: organizationDescription, organizationID: organizationID))
+                                organizationState: organizationState,organizationCategories: organizationCategories,organizationDescription: organizationDescription, organizationID: organizationID, organizationInterest: organizationInterest))
                         }
                         print("Organization Name: \(organization["name"].string!)")
                         print("Organization Email: \(organization["email"].string!)")
@@ -36,11 +36,13 @@ class OrganizationCollection{
                         print("Organization Category: \(organization["categories"].string!)")
                         print("Organization Description: \(organization["description"].string!)")
                         print("Organization ID: \(organization["id"].intValue)")
+                        print("Organization Interest: \(organization["interest"].string!)")
+
                         
                         for event in organization["events"].arrayValue {
-                            if let eventName = event["eventName"].string, eventAddress = event["address"].string, eventCity = event["city"].string, eventState = event["state"].string, eventStartTime = event["startTime"].string, eventEndTime = event["endTime"].string, eventCategories = event["categories"].string, eventDescription = event["description"].string {
+                            if let organizationName = organization["name"].string, eventName = event["eventName"].string, eventAddress = event["address"].string, eventCity = event["city"].string, eventState = event["state"].string, eventStartTime = event["startTime"].string, eventEndTime = event["endTime"].string, eventCategories = event["categories"].string, eventDescription = event["description"].string {
                                 let eventVolunteerLimit = event["volunteerLimit"].intValue, eventID = event["id"].intValue
-                                self.events.append(Event(eventName: eventName, eventAddress: eventAddress, eventCity: eventCity, eventState: eventState, eventStartTime: eventStartTime, eventEndTime: eventEndTime, eventCategories: eventCategories, eventDescription: eventDescription, eventVolunteerLimit: eventVolunteerLimit, eventID: eventID))
+                                self.events.append(Event(organizationName: organizationName, eventName: eventName, eventAddress: eventAddress, eventCity: eventCity, eventState: eventState, eventStartTime: eventStartTime, eventEndTime: eventEndTime, eventCategories: eventCategories, eventDescription: eventDescription, eventVolunteerLimit: eventVolunteerLimit, eventID: eventID))
                             }
                             
                             print("Event Name: \(event["eventName"].string!)")
@@ -55,6 +57,10 @@ class OrganizationCollection{
                             print("Event ID: \(event["id"].intValue)")
                             
                             for task in event["task"].arrayValue {
+                                if let taskName = task["name"].string, taskTime = task["startTime"].string, taskDescription = task["description"].string {
+                                    let taskID = task["id"].intValue
+                                    self.tasks.append(Task(taskName: taskName, taskTime: taskTime, taskDescription: taskDescription, taskID: taskID))
+                                }
                                 print("Task Name: \(task["name"].string!)")
                                 print("Task Description: \(task["description"].string!)")
                                 print("Task Start Time: \(task["startTime"].string!)")
