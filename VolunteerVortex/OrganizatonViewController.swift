@@ -1,17 +1,22 @@
 //
-//  MyServiceViewController.swift
+//  OrganizatonViewController.swift
 //  VolunteerVortex
 //
-//  Created by Joseph Trammel on 11/7/15.
+//  Created by George Gilmartin on 11/22/15.
 //  Copyright © 2015 George Gilmartin. All rights reserved.
 //
 
 import UIKit
 
-class MyServiceViewController: UIViewController {
+class OrganizatonViewController: UIViewController {
+    @IBOutlet weak var organizationDescriptionLabel: UILabel!
+    @IBOutlet weak var organizationProfileImageView: UIImageView!
+    @IBOutlet weak var organizationTableView: UITableView!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
         // Do any additional setup after loading the view.
     }
 

@@ -1,0 +1,102 @@
+{
+"status": "ok",
+"organizations":[
+
+	{
+		"name": "Habitat for Humanity",
+		"email": "habitat@humanity.edu",
+		"phone": "(144) 448-3564",
+		"address": "P.O. Box 591, 1483 Magna. Rd.",
+		"city": "Columbia",
+		"state": "MO",
+		"categories": "Animals",
+		"events": [
+			{
+				"eventName": "Puppy Playground",
+				"address": "P.O. Box 947, 7315 Mauris. St.",
+				"city": "Waitara",
+				"state": "NI",
+				"startTime": "09-17-16",
+				"endTime": "08-26-16",
+				"categories": "dolor",
+                "description": "This is a test for event description",
+				"volunteerLimit": 10,
+				"id": 1,
+				"task": [{
+					"name": "Puppy Play",
+					"description": "Play with puppies for an hour.",
+					"startTime": "3PM",
+					"id": 1
+				}]
+			},
+			{
+				"eventName": "Pooches and Booches",
+				"address": "4608 Donec Road",
+				"city": "Vienna",
+				"state": "Vienna",
+				"startTime": "02-16-15",
+				"endTime": "08-18-15",
+				"categories": "et",
+                "description": "This is a test for event description",
+				"volunteerLimit": 10,
+				"id": 2,
+				"task": [{
+					"name": "Puppy Play",
+					"description": "Play with puppies for an hour.",
+					"startTime": "2PM",
+					"id": 1
+				}]
+		}],
+		"description": "Lorem ipsum dolor sit amet, consectetuer",
+		"id": 1
+	},
+    {
+     "name": "Food Kitchen",
+     "email": "foodkitch@kitchen.com",
+     "phone": "(155) 558-3869",
+     "address": "P.O. Box 777, 1512 Magnavox. Rd.",
+     "city": "Oswego",
+     "state": "IL",
+     "categories": "Food",
+     "events": [
+                {
+                "eventName": "Feed the Homeless",
+                "address": "P.O. Box 947, 7315 Mauris. St.",
+                "city": "Waitara",
+                "state": "NI",
+                "startTime": "09-17-16",
+                "endTime": "08-26-16",
+                "categories": "dolor",
+                "description": "This is a test for event description",
+                "volunteerLimit": 10,
+                "id": 1,
+                "task": [{
+                         "name": "sed, sapien.",
+                         "description": "Lorem",
+                         "startTime": "12-12-14",
+                         "id": 1
+                         }]
+                },
+                {
+                "eventName": "Food Drive",
+                "address": "4608 Donec Road",
+                "city": "Vienna",
+                "state": "Vienna",
+                "startTime": "02-16-15",
+                "endTime": "08-18-15",
+                "categories": "et",
+                "description": "This is a test for event description",
+                "volunteerLimit": 10,
+                "id": 2,
+                "task": [{
+                         "name": "sed, sapien.",
+                         "description": "Lorem",
+                         "startTime": "12-12-14",
+                         "id": 1
+                         }]
+                }],
+     "description": "Lorem ipsum dolor sit amet, consectetuer",
+     "id": 1
+     }
+]
+}
