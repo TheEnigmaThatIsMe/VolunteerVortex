@@ -9,6 +9,10 @@
 import UIKit
 
 class OrganizatonViewController: UIViewController {
+    @IBOutlet weak var organizationDescriptionLabel: UILabel!
+    @IBOutlet weak var organizationProfileImageView: UIImageView!
+    @IBOutlet weak var organizationTableView: UITableView!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()

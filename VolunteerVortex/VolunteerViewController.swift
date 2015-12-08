@@ -13,7 +13,8 @@ class VolunteerViewController: UIViewController, UITableViewDataSource, UITableV
     let organizationCollection = OrganizationCollection.sharedInstance //get data from OrganizationCollection.swift
     var filteredOrganizations: [Organization]!
     var filteredEvents: [Event]!
-    //var filteredTasks: [Task]!
+    var filteredTasks: [Task]!
+    var valueToPass: String!
     //need to get data that has been loaded or load data from json to use
     
     @IBOutlet weak var volunteerTitleLabel: UILabel!
@@ -36,14 +37,13 @@ class VolunteerViewController: UIViewController, UITableViewDataSource, UITableV
         organizationCollection.readJSON()
         filteredOrganizations = organizationCollection.organizations
         filteredEvents = organizationCollection.events
-        //print(filteredOrganizations.count)
+        filteredTasks = organizationCollection.tasks
     }
     
     /*
     The following functions are necessary for using the table views
 */
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-    
         return 1
     }
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -55,7 +55,7 @@ class VolunteerViewController: UIViewController, UITableViewDataSource, UITableV
         case 1:
             return filteredEvents.count // count of items in table, must have data to know
         case 2:
-            return 20//filteredTasks.count // count of items in table, must have data to know
+            return 20 // count of items in table, must have data to know
         default:
             return 20
         }
@@ -95,7 +95,6 @@ class VolunteerViewController: UIViewController, UITableViewDataSource, UITableV
             let organization = filteredOrganizations[indexPath.row]
             orgCell.organizationTitleLabel.text = organization.organizationName
             orgCell.organizationCategoryLabel.text = organization.organizationCategories
-            //print(organization.organizationPhone)
             
             orgCell.accessoryType = .DisclosureIndicator
             
@@ -109,10 +108,11 @@ class VolunteerViewController: UIViewController, UITableViewDataSource, UITableV
             
             let event = filteredEvents[indexPath.row]
             
+            //valueToPass = indexPath.row
             
             oppCell.opportunityTitleLabel.text = event.eventName
             oppCell.opportunityDateLabel.text = event.eventStartTime
-            //oppCell.opportunityOrganizationLabel.text = organization.organizationName
+            oppCell.opportunityOrganizationLabel.text = event.organizationName
             
             oppCell.accessoryType = .DisclosureIndicator
             //Reasigning to cell variable
@@ -138,6 +138,33 @@ class VolunteerViewController: UIViewController, UITableViewDataSource, UITableV
         //print("Returning Cell")
         return cell; //return the cell
     }
+    
+    /*func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        print("You selected cell #\(indexPath.row)!")
+        
+        // Get Cell Label
+        //let indexPath = tableView.indexPathForSelectedRow!
+        //let currentCell = tableView.cellForRowAtIndexPath(indexPath) as UITableViewCell!
+        
+        valueToPass = indexPath.row
+        print("Value to pass from Volunteer View = \(valueToPass)")
+        performSegueWithIdentifier("opportunitySegue", sender: self)
+        
+    }*/
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        if (segue.identifier == "opportunitySegue") {
+            
+            // initialize new view controller and cast it as your view controller
+            //let viewController = segue.destinationViewController as! OpportunitiesViewController
+            // your new view controller should have property that will store passed value
+            //print("Value to Pass to View Controller = \(valueToPass)")
+            //viewController.passedValue = valueToPass
+        }
+        
+    }
+    
     /*
     // MARK: - Navigation
 
