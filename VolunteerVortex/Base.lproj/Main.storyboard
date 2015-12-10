@@ -259,6 +259,27 @@
                                             <outlet property="delegate" destination="o8M-sf-O2u" id="hsl-cH-KmD"/>
                                         </connections>
                                     </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About Me" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zV2-C1-JcQ">
+                                        <rect key="frame" x="8" y="355" width="75" height="21"/>
+                                        <animations/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="9iq-cv-Lpj"/>
+                                            <constraint firstAttribute="width" constant="75" id="e4s-RI-IV6"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" showsHorizontalScrollIndicator="NO" text="Enter something about yourself." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="sA7-2o-ffO">
+                                        <rect key="frame" x="8" y="384" width="584" height="95"/>
+                                        <animations/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="o8M-sf-O2u" id="3M9-6w-J6T"/>
+                                        </connections>
+                                    </textView>
                                 </subviews>
                                 <animations/>
                                 <gestureRecognizers/>
@@ -268,6 +289,8 @@
                                     <constraint firstItem="PNt-s3-IGx" firstAttribute="trailing" secondItem="WwP-WC-vAi" secondAttribute="trailing" id="2VA-4u-Xt2"/>
                                     <constraint firstItem="xfQ-EB-Net" firstAttribute="trailing" secondItem="PNt-s3-IGx" secondAttribute="trailing" id="3Lc-F9-GVM"/>
                                     <constraint firstItem="xfQ-EB-Net" firstAttribute="centerX" secondItem="uTx-Ew-Ykq" secondAttribute="centerX" id="3T6-Eu-uWz"/>
+                                    <constraint firstItem="zV2-C1-JcQ" firstAttribute="top" secondItem="SEu-wJ-xsE" secondAttribute="bottom" constant="8" symbolic="YES" id="4Lo-9H-9mZ"/>
+                                    <constraint firstItem="sA7-2o-ffO" firstAttribute="leading" secondItem="zV2-C1-JcQ" secondAttribute="leading" id="6Bn-0i-S5D"/>
                                     <constraint firstItem="xfQ-EB-Net" firstAttribute="trailing" secondItem="SEu-wJ-xsE" secondAttribute="trailing" id="6re-9g-4qC"/>
                                     <constraint firstItem="uvs-hM-cxf" firstAttribute="top" secondItem="ub6-M6-R7K" secondAttribute="bottom" constant="8" symbolic="YES" id="Cor-LN-r36"/>
                                     <constraint firstItem="3Cg-KS-gur" firstAttribute="leading" secondItem="ub6-M6-R7K" secondAttribute="leading" id="FLH-je-Qgt"/>
@@ -279,16 +302,20 @@
                                     <constraint firstItem="ig6-b1-v0n" firstAttribute="top" secondItem="uTx-Ew-Ykq" secondAttribute="top" constant="10" id="O89-5R-Fvb"/>
                                     <constraint firstItem="PNt-s3-IGx" firstAttribute="leading" secondItem="uTx-Ew-Ykq" secondAttribute="leadingMargin" id="OFh-yc-i6a"/>
                                     <constraint firstItem="PNt-s3-IGx" firstAttribute="leading" secondItem="xfQ-EB-Net" secondAttribute="leading" id="QpP-mr-uLh"/>
+                                    <constraint firstItem="sA7-2o-ffO" firstAttribute="trailing" secondItem="SEu-wJ-xsE" secondAttribute="trailing" id="WWA-Wx-XKn"/>
                                     <constraint firstItem="WwP-WC-vAi" firstAttribute="top" secondItem="uvs-hM-cxf" secondAttribute="bottom" constant="8" symbolic="YES" id="X8l-f9-cxZ"/>
                                     <constraint firstItem="ub6-M6-R7K" firstAttribute="top" secondItem="3Cg-KS-gur" secondAttribute="bottom" constant="8" symbolic="YES" id="Xgb-un-1XM"/>
                                     <constraint firstItem="SEu-wJ-xsE" firstAttribute="leading" secondItem="xfQ-EB-Net" secondAttribute="leading" id="cco-a7-eUK"/>
                                     <constraint firstItem="PNt-s3-IGx" firstAttribute="leading" secondItem="auK-rF-HtM" secondAttribute="leading" id="cil-4a-JeM"/>
+                                    <constraint firstItem="sA7-2o-ffO" firstAttribute="top" secondItem="zV2-C1-JcQ" secondAttribute="bottom" constant="8" symbolic="YES" id="f6z-jq-nDL"/>
+                                    <constraint firstItem="zV2-C1-JcQ" firstAttribute="leading" secondItem="SEu-wJ-xsE" secondAttribute="leading" id="iwl-bw-HKX"/>
                                     <constraint firstAttribute="bottom" secondItem="SEu-wJ-xsE" secondAttribute="bottom" constant="140" id="kNM-O1-emX"/>
                                     <constraint firstItem="97H-pt-9HD" firstAttribute="leading" secondItem="uTx-Ew-Ykq" secondAttribute="leading" constant="9" id="lMZ-Ku-rPS"/>
                                     <constraint firstItem="xfQ-EB-Net" firstAttribute="top" secondItem="PNt-s3-IGx" secondAttribute="bottom" constant="8" symbolic="YES" id="lP6-8R-s3S"/>
                                     <constraint firstItem="3Cg-KS-gur" firstAttribute="trailing" secondItem="ub6-M6-R7K" secondAttribute="trailing" id="m1M-XO-h8Q"/>
                                     <constraint firstItem="PNt-s3-IGx" firstAttribute="trailing" secondItem="uTx-Ew-Ykq" secondAttribute="trailingMargin" id="o52-1k-zPu"/>
                                     <constraint firstItem="ub6-M6-R7K" firstAttribute="leading" secondItem="uvs-hM-cxf" secondAttribute="leading" id="qOU-pE-f7d"/>
+                                    <constraint firstItem="sA7-2o-ffO" firstAttribute="bottom" secondItem="uTx-Ew-Ykq" secondAttribute="bottomMargin" id="tKp-6s-myK"/>
                                     <constraint firstItem="SEu-wJ-xsE" firstAttribute="top" secondItem="97H-pt-9HD" secondAttribute="bottom" constant="8" symbolic="YES" id="yCt-by-FkJ"/>
                                     <constraint firstItem="3Cg-KS-gur" firstAttribute="leading" secondItem="ig6-b1-v0n" secondAttribute="leading" id="yz2-nv-lCe"/>
                                 </constraints>
@@ -310,6 +337,7 @@
                         <barButtonItem key="rightBarButtonItem" title="Save" id="kA5-e3-CnC"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="aboutTextView" destination="sA7-2o-ffO" id="gMb-aV-kxV"/>
                         <outlet property="ageTextField" destination="WwP-WC-vAi" id="LO4-hE-Hch"/>
                         <outlet property="cityNameTextField" destination="PNt-s3-IGx" id="ce3-wJ-H7m"/>
                         <outlet property="emailTextField" destination="SEu-wJ-xsE" id="MHy-7c-eSg"/>
