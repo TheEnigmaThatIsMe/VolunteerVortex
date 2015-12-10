@@ -8,7 +8,7 @@
 
 import UIKit
 
-class EditProfileViewController: UIViewController, UITextFieldDelegate {
+class EditProfileViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate {
     
     @IBOutlet var scrollView: UIScrollView!
     @IBOutlet weak var firstNameTextField: UITextField!
@@ -17,61 +17,27 @@ class EditProfileViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var lastNameTextField: UITextField!
     @IBOutlet weak var ageTextField: UITextField!
     @IBOutlet weak var stateTextField: UITextField!
+    @IBOutlet weak var aboutTextView: UITextView!
 
     
     var activeTextField: UITextField? = nil
-    let keyboardVerticalSpacing: CGFloat = 0
+    var activeTextView: UITextView? = nil
+    let keyboardVerticalSpacing: CGFloat = 10
     
     @IBAction func saveButton(sender: AnyObject) {
         
     }
     
-    /*@IBOutlet weak var agePicker: UIPickerView!
-    let agePickerData = ["18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46", "47", "48", "49", "50", "51", "52", "53", "54", "55", "56", "57", "58", "59", "60", "61", "62", "63", "64", "65", "66", "67", "68", "69", "70", "71", "72", "73", "74", "75", "76", "77", "78", "79", "80", "81", "82", "83", "84", "85", "86", "87", "88", "89", "90", "91", "92", "93", "94", "95", "96", "97", "98", "99", "100", "101", "102", "103", "104", "105", "106", "107", "108", "109", "110", "111", "112", "113", "114", "115", "116", "117", "118", "119", "120", "121", "122"]
-    
-    @IBOutlet weak var statePicker: UIPickerView!
-    let statePickerData = ["Alabama","Alaska","Arizona","Arkansas","California","Colorado","Connecticut","Delaware","Florida","Georgia","Hawaii","Idaho","Illinois","Indiana","Iowa","Kansas","Louisiana","Maine","Maryland","Massachusetts","Michigan","Minnesota","Mississippi","Missouri", "Montana", "Nebraska", "Nevada", "New Hampshire","New Jersey","New Mexico","New York","North Carolina","North Dakota","Ohio","Oklahoma","Oregon","Pennsylvania","Rhode Island","South Carolina","South Dakota","Tennessee","Texas","Utah","Vermont","Virginia","Washington","West Virginia","Wisconsin","Wyoming"]*/
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Edit Profile"
         
+        aboutTextView.delegate = self
+        
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWasShown:", name: UIKeyboardDidShowNotification, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillBeHidden:", name: UIKeyboardWillHideNotification, object: nil)
-        
-        /*agePicker.dataSource = self
-        agePicker.delegate = self
-        statePicker.dataSource = self
-        statePicker.delegate = self*/
 
     }
-    
-    //MARK: - Delegates and data sources
-    //MARK: Data Sources
-    /*func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
-        return 1
-    }
-    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        if (pickerView.tag == 1){
-            return agePickerData.count
-        }
-        else{
-            return statePickerData.count
-        }
-    }
-    //MARK: Delegates
-    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        if (pickerView.tag == 1){
-            return agePickerData[row]
-        }
-        else{
-            return statePickerData[row]
-        }
-    }
-    
-    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        
-    }*/
 
     func textFieldDidBeginEditing(textField: UITextField) {
         activeTextField = textField
@@ -93,7 +59,13 @@ class EditProfileViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func dismissKeyboard(sender: AnyObject) {
-        activeTextField?.resignFirstResponder()
+        if ((activeTextField?.isFirstResponder()) != nil){
+            activeTextField?.resignFirstResponder()
+        }
+        else if ((activeTextView?.isFirstResponder()) != nil){
+            activeTextView?.resignFirstResponder()
+        }
+        
     }
     
     func keyboardWasShown(aNotification: NSNotification) {
@@ -105,12 +77,22 @@ class EditProfileViewController: UIViewController, UITextFieldDelegate {
             
             scrollView.contentInset = contentInsets
             scrollView.scrollIndicatorInsets = contentInsets
-            
+            if((activeTextField?.isFirstResponder()) != nil){
             let activeTextFieldSize = CGRectMake(activeTextField!.frame.origin.x, activeTextField!.frame.origin.y, activeTextField!.frame.width, activeTextField!.frame.height + keyboardVerticalSpacing)
+                
+                dispatch_async(dispatch_get_main_queue(), {
+                    self.scrollView.scrollRectToVisible(activeTextFieldSize, animated: true)
+                })
+            }
+            else if (activeTextView?.isFirstResponder() != nil){
+                let activeTextViewSize = CGRectMake(activeTextView!.frame.origin.x, activeTextView!.frame.origin.y, activeTextView!.frame.width, activeTextView!.frame.height + keyboardVerticalSpacing)
+                
+                dispatch_async(dispatch_get_main_queue(), {
+                    self.scrollView.scrollRectToVisible(activeTextViewSize, animated: true)
+                })
+            }
             
-            dispatch_async(dispatch_get_main_queue(), {
-                self.scrollView.scrollRectToVisible(activeTextFieldSize, animated: true)
-            })
+            
         }
     }
     
@@ -119,6 +101,20 @@ class EditProfileViewController: UIViewController, UITextFieldDelegate {
         scrollView.scrollIndicatorInsets = UIEdgeInsetsZero
     }
     
+    // MARK: UITextViewDelegate
+    func textViewDidBeginEditing(textView: UITextView) {
+        activeTextView = textView
+        
+        let activeTextViewSize = CGRectMake(activeTextView!.frame.origin.x, activeTextView!.frame.origin.y, activeTextView!.frame.width, activeTextView!.frame.height + keyboardVerticalSpacing)
+        
+        dispatch_async(dispatch_get_main_queue(), {
+            self.scrollView.scrollRectToVisible(activeTextViewSize, animated: true)
+        })
+    }
+    
+    func textViewDidEndEditing(textView: UITextView) {
+        activeTextView = nil
+    }
 
     /*
     // MARK: - Navigation
