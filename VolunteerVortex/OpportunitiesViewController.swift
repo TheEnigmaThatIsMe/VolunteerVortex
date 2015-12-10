@@ -12,7 +12,7 @@ class OpportunitiesViewController: UIViewController, UITableViewDataSource, UITa
     
     let organizationCollection = OrganizationCollection.sharedInstance //get data from OrganizationCollection.swift
     
-    @IBOutlet weak var eventTitleLabel: UILabel!
+    @IBOutlet weak var eventTitle: UILabel!
     @IBOutlet weak var eventDescriptionLabel: UILabel!
     @IBOutlet weak var eventsTableView: UITableView!
     
@@ -23,11 +23,12 @@ class OpportunitiesViewController: UIViewController, UITableViewDataSource, UITa
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "Event Info"
         eventsTableView.delegate = self
         eventsTableView.dataSource = self
         print("Value to pass = \(valueToPass)")
         print("Passed Value = \(passedValue)")
-        eventTitleLabel.text = ""
+        eventTitle.text = "Pooches and Booches Puppy Playground"
         filteredTasks = organizationCollection.tasks
         // Do any additional setup after loading the view.
     }
