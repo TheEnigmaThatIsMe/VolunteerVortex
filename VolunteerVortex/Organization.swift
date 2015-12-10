@@ -18,8 +18,9 @@ class Organization {
     var organizationCategories: String? = ""
     var organizationDescription: String? = ""
     var organizationID: Int = 0
+    var organizationInterest: String? = ""
     
-    init(organizationName: String, organizationEmail:String, organizationPhone: String, organizationAddress: String, organizationCity: String, organizationState: String,organizationCategories: String, organizationDescription: String, organizationID: Int) {
+    init(organizationName: String, organizationEmail:String, organizationPhone: String, organizationAddress: String, organizationCity: String, organizationState: String,organizationCategories: String, organizationDescription: String, organizationID: Int, organizationInterest: String) {
         self.organizationName = organizationName
         self.organizationEmail = organizationEmail
         self.organizationPhone = organizationPhone
@@ -29,5 +30,6 @@ class Organization {
         self.organizationCategories = organizationCategories
         self.organizationDescription = organizationDescription
         self.organizationID = organizationID
+        self.organizationInterest = organizationInterest
     }
 }

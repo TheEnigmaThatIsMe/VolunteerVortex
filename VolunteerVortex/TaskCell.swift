@@ -1,28 +1,29 @@
 //
-//  OpportunitiesCell.swift
+//  TaskCell.swift
 //  VolunteerVortex
 //
-//  Created by MU IT Program on 11/17/15.
+//  Created by George Gilmartin on 12/3/15.
 //  Copyright © 2015 George Gilmartin. All rights reserved.
 //
 
 import UIKit
 
-class OpportunitiesCell: UITableViewCell {
+class TaskCell: UITableViewCell {
+    @IBOutlet weak var taskDescriptionLabel: UILabel!
+    @IBOutlet weak var taskTitleLabel: UILabel!
+    @IBOutlet weak var taskTimeLabel: UILabel!
     
-    @IBOutlet weak var opportunityTitleLabel: UILabel!
-    @IBOutlet weak var opportunityOrganizationLabel: UILabel!
-    @IBOutlet weak var opportunityDateLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
     }
-
+    
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
         // Configure the view for the selected state
     }
-
+    
 }

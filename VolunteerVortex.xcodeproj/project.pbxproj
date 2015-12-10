@@ -12,6 +12,8 @@
 		670EF44C1BFBB79E0087D4D5 /* InterestsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 670EF44B1BFBB79E0087D4D5 /* InterestsCell.swift */; };
 		805A9E4F1BFE5C15003DA28E /* Organization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805A9E4E1BFE5C15003DA28E /* Organization.swift */; };
 		805A9E511BFE5C7F003DA28E /* OrganizationCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805A9E501BFE5C7F003DA28E /* OrganizationCollection.swift */; };
+		8618A9901C10E3CA00406D91 /* TaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8618A98F1C10E3CA00406D91 /* TaskCell.swift */; };
+		8618A9921C10E5AC00406D91 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8618A9911C10E5AC00406D91 /* Task.swift */; };
 		865492381BFE4DE1007008C1 /* organization.json in Resources */ = {isa = PBXBuildFile; fileRef = 865492371BFE4DE1007008C1 /* organization.json */; };
 		8662E88A1C096CF900FD2270 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8662E8891C096CF900FD2270 /* Event.swift */; };
 		8672CDE01C060D5200583B07 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8672CDDF1C060D5200583B07 /* Assets.xcassets */; };
@@ -55,6 +57,8 @@
 		670EF44B1BFBB79E0087D4D5 /* InterestsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InterestsCell.swift; sourceTree = "<group>"; };
 		805A9E4E1BFE5C15003DA28E /* Organization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Organization.swift; sourceTree = "<group>"; };
 		805A9E501BFE5C7F003DA28E /* OrganizationCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrganizationCollection.swift; sourceTree = "<group>"; };
+		8618A98F1C10E3CA00406D91 /* TaskCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskCell.swift; sourceTree = "<group>"; };
+		8618A9911C10E5AC00406D91 /* Task.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		865492371BFE4DE1007008C1 /* organization.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = organization.json; sourceTree = "<group>"; };
 		8662E8891C096CF900FD2270 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		8672CDDF1C060D5200583B07 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -146,10 +150,12 @@
 				FD9075D21BEE9E5D003E14D0 /* SettingsViewController.swift */,
 				86995AD31BF0E2F000905BFC /* EditProfileViewController.swift */,
 				670EF4471BFBB7270087D4D5 /* OrganizationCell.swift */,
+				8618A98F1C10E3CA00406D91 /* TaskCell.swift */,
 				670EF4491BFBB7860087D4D5 /* OpportunitiesCell.swift */,
 				670EF44B1BFBB79E0087D4D5 /* InterestsCell.swift */,
 				805A9E4E1BFE5C15003DA28E /* Organization.swift */,
 				8662E8891C096CF900FD2270 /* Event.swift */,
+				8618A9911C10E5AC00406D91 /* Task.swift */,
 				805A9E501BFE5C7F003DA28E /* OrganizationCollection.swift */,
 			);
 			path = VolunteerVortex;
@@ -312,6 +318,7 @@
 				869F739F1C0288D500C1395C /* InterestsViewController.swift in Sources */,
 				805A9E4F1BFE5C15003DA28E /* Organization.swift in Sources */,
 				FD9075CF1BEE9E3D003E14D0 /* ProfileViewController.swift in Sources */,
+				8618A9921C10E5AC00406D91 /* Task.swift in Sources */,
 				FD9075D11BEE9E50003E14D0 /* MyServiceViewController.swift in Sources */,
 				8662E88A1C096CF900FD2270 /* Event.swift in Sources */,
 				86D866201BEE92D8008E5558 /* AppDelegate.swift in Sources */,
@@ -321,6 +328,7 @@
 				805A9E511BFE5C7F003DA28E /* OrganizationCollection.swift in Sources */,
 				670EF44C1BFBB79E0087D4D5 /* InterestsCell.swift in Sources */,
 				670EF44A1BFBB7860087D4D5 /* OpportunitiesCell.swift in Sources */,
+				8618A9901C10E3CA00406D91 /* TaskCell.swift in Sources */,
 				86995AD41BF0E2F000905BFC /* EditProfileViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
