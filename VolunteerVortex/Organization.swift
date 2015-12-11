@@ -19,8 +19,9 @@ class Organization {
     var organizationDescription: String? = ""
     var organizationID: Int = 0
     var organizationInterest: String? = ""
+    var organizationEvents: [Event] = Array<Event>()
     
-    init(organizationName: String, organizationEmail:String, organizationPhone: String, organizationAddress: String, organizationCity: String, organizationState: String,organizationCategories: String, organizationDescription: String, organizationID: Int, organizationInterest: String) {
+    init(organizationName: String, organizationEmail:String, organizationPhone: String, organizationAddress: String, organizationCity: String, organizationState: String,organizationCategories: String, organizationDescription: String, organizationID: Int, organizationInterest: String, organizationEvents: Array<Event>) {
         self.organizationName = organizationName
         self.organizationEmail = organizationEmail
         self.organizationPhone = organizationPhone
@@ -31,5 +32,6 @@ class Organization {
         self.organizationDescription = organizationDescription
         self.organizationID = organizationID
         self.organizationInterest = organizationInterest
+        self.organizationEvents = organizationEvents
     }
 }

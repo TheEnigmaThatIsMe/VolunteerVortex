@@ -437,7 +437,7 @@
                                         <rect key="frame" x="0.0" y="28" width="600" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="O9d-pe-U2q" id="7zP-An-iqT">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="69.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="69"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="82y-gE-ptJ">
@@ -473,14 +473,13 @@
                                         <connections>
                                             <outlet property="organizationCategoryLabel" destination="82y-gE-ptJ" id="qJ8-ji-K06"/>
                                             <outlet property="organizationTitleLabel" destination="uTY-iX-OHB" id="QC8-du-OpK"/>
-                                            <segue destination="1cM-QO-cDf" kind="show" id="aVC-X9-tYk"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="opportunities" rowHeight="80" id="YxZ-1W-aS8" customClass="OpportunitiesCell" customModule="VolunteerVortex" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="98" width="600" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="YxZ-1W-aS8" id="AuK-DZ-Tsy">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="79.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="79"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Opportunity Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SYD-Lj-uVt">
@@ -528,14 +527,13 @@
                                             <outlet property="opportunityDateLabel" destination="gOo-Uv-WvN" id="g4g-73-rzP"/>
                                             <outlet property="opportunityOrganizationLabel" destination="fUa-rw-U0j" id="7p4-ZO-0Fg"/>
                                             <outlet property="opportunityTitleLabel" destination="SYD-Lj-uVt" id="G9c-NK-tLp"/>
-                                            <segue destination="ifs-aZ-1rG" kind="show" identifier="opportunitySegue" id="pKZ-hy-irE"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="interests" rowHeight="50" id="YzQ-Jb-QYR" customClass="InterestsCell" customModule="VolunteerVortex" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="178" width="600" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="YzQ-Jb-QYR" id="njZ-WA-e5F">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="49.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="49"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Interest" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HXA-ZL-KN2">
@@ -557,7 +555,6 @@
                                         <animations/>
                                         <connections>
                                             <outlet property="interestTitleLabel" destination="HXA-ZL-KN2" id="7dR-nb-wHv"/>
-                                            <segue destination="7os-y0-dex" kind="show" identifier="interestsSegue" id="mEY-Od-fbO"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -592,6 +589,9 @@
                     <connections>
                         <outlet property="segmentedControl" destination="vDa-cZ-iSX" id="uGd-ME-LrD"/>
                         <outlet property="table" destination="xka-5y-rPr" id="wbr-K2-1T2"/>
+                        <segue destination="1cM-QO-cDf" kind="show" identifier="organizationSegue" id="mTD-aW-489"/>
+                        <segue destination="ifs-aZ-1rG" kind="show" identifier="opportunitySegue" id="mXR-EK-kDO"/>
+                        <segue destination="7os-y0-dex" kind="show" identifier="interestsSegue" id="cgf-F5-UQG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CQv-1h-6eZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -619,7 +619,7 @@
                                         <rect key="frame" x="0.0" y="28" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Y62-K6-4t2" id="LOO-PE-UHa">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <animations/>
                                         </tableViewCellContentView>
@@ -667,20 +667,64 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fTN-ed-Poq">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="76" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fTN-ed-Poq">
                                 <rect key="frame" x="0.0" y="294" width="600" height="257"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="opportunitiesCell" id="T7d-UC-PF6">
-                                        <rect key="frame" x="0.0" y="28" width="600" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="T7d-UC-PF6" id="oof-II-BfP">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="opportunities" id="l8G-FT-p5c" customClass="OpportunitiesCell" customModule="VolunteerVortex" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="600" height="76"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="l8G-FT-p5c" id="vkj-yN-OMs">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="75"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Opportunity Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nt3-Ph-mEf">
+                                                    <rect key="frame" x="8" y="10" width="456" height="34"/>
+                                                    <animations/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Organization Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ekp-DQ-itF">
+                                                    <rect key="frame" x="8" y="41" width="456" height="31"/>
+                                                    <animations/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Date" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6hn-Ja-jKR">
+                                                    <rect key="frame" x="492" y="27" width="100" height="25"/>
+                                                    <animations/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="100" id="MOo-fC-EFP"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
                                             <animations/>
+                                            <constraints>
+                                                <constraint firstItem="6hn-Ja-jKR" firstAttribute="leading" secondItem="ekp-DQ-itF" secondAttribute="trailing" constant="28" id="1Re-QX-MXz"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="nt3-Ph-mEf" secondAttribute="bottom" constant="27.5" id="F0u-S3-nbD"/>
+                                                <constraint firstItem="ekp-DQ-itF" firstAttribute="leading" secondItem="nt3-Ph-mEf" secondAttribute="leading" id="Kxl-e2-gub"/>
+                                                <constraint firstItem="6hn-Ja-jKR" firstAttribute="firstBaseline" secondItem="nt3-Ph-mEf" secondAttribute="baseline" id="PQU-AA-EgX"/>
+                                                <constraint firstItem="6hn-Ja-jKR" firstAttribute="centerY" secondItem="vkj-yN-OMs" secondAttribute="centerY" id="cqO-07-1Rt"/>
+                                                <constraint firstItem="nt3-Ph-mEf" firstAttribute="top" secondItem="vkj-yN-OMs" secondAttribute="topMargin" constant="2" id="dfK-XE-RfU"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="ekp-DQ-itF" secondAttribute="bottom" constant="-0.5" id="f3g-UV-LKB"/>
+                                                <constraint firstItem="ekp-DQ-itF" firstAttribute="top" secondItem="vkj-yN-OMs" secondAttribute="topMargin" constant="33" id="nmh-uK-E8e"/>
+                                                <constraint firstItem="ekp-DQ-itF" firstAttribute="leading" secondItem="vkj-yN-OMs" secondAttribute="leadingMargin" id="orI-yt-tce"/>
+                                                <constraint firstItem="6hn-Ja-jKR" firstAttribute="trailing" secondItem="vkj-yN-OMs" secondAttribute="trailingMargin" id="wuw-lB-ZwG"/>
+                                                <constraint firstItem="nt3-Ph-mEf" firstAttribute="trailing" secondItem="ekp-DQ-itF" secondAttribute="trailing" id="xUu-hA-Dax"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <animations/>
+                                        <connections>
+                                            <outlet property="opportunityDateLabel" destination="6hn-Ja-jKR" id="mJw-FT-aXm"/>
+                                            <outlet property="opportunityOrganizationLabel" destination="ekp-DQ-itF" id="LVd-HF-TS1"/>
+                                            <outlet property="opportunityTitleLabel" destination="nt3-Ph-mEf" id="Wnq-NF-Xqc"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -716,6 +760,7 @@
                         <outlet property="organizationDescriptionLabel" destination="9i0-5V-5ky" id="O48-FC-fYS"/>
                         <outlet property="organizationProfileImageView" destination="XmD-U0-LQ8" id="22F-PM-eS3"/>
                         <outlet property="organizationTableView" destination="fTN-ed-Poq" id="mSK-tg-XJ3"/>
+                        <segue destination="ifs-aZ-1rG" kind="show" identifier="opportunitySegue" id="jAg-po-o59"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8b3-Gz-RIo" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -746,7 +791,7 @@
                                         <rect key="frame" x="0.0" y="28" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lg9-cH-iGY" id="Mdr-Cz-8CY">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="8AM" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cRj-ak-ceD">
@@ -916,7 +961,7 @@
                                 <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Hqo-dm-ATN" id="12W-6r-Pza">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <animations/>
                                 </tableViewCellContentView>
@@ -995,7 +1040,7 @@
                                         <rect key="frame" x="0.0" y="28" width="600" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="czg-xe-aap" id="Lv7-vg-gOz">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="99.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="99"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Organization Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YfG-gN-kiv">
@@ -1107,4 +1152,7 @@
         <image name="settings" width="30" height="30"/>
         <image name="volunteer" width="30" height="30"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="jAg-po-o59"/>
+    </inferredMetricsTieBreakers>
 </document>

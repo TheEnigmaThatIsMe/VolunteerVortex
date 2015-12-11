@@ -18,7 +18,7 @@ class OpportunitiesViewController: UIViewController, UITableViewDataSource, UITa
     
     var valueToPass: Int = 0
     var passedValue: Int = 0
-    var filteredEvents: [Event]!
+    var filteredEvent: Event!
     var filteredTasks: [Task]!
     
     override func viewDidLoad() {
@@ -28,8 +28,8 @@ class OpportunitiesViewController: UIViewController, UITableViewDataSource, UITa
         eventsTableView.dataSource = self
         print("Value to pass = \(valueToPass)")
         print("Passed Value = \(passedValue)")
-        eventTitle.text = "Pooches and Booches Puppy Playground"
-        filteredTasks = organizationCollection.tasks
+        //eventTitle.text = "Pooches and Booches Puppy Playground"
+        //filteredTasks = organizationCollection.tasks
         // Do any additional setup after loading the view.
     }
 
@@ -47,14 +47,6 @@ class OpportunitiesViewController: UIViewController, UITableViewDataSource, UITa
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         print("number of rows \(filteredTasks.count)")
         return filteredTasks.count
-    }
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        
-        var height : CGFloat
-        
-        height = 70
-        
-        return height
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
