@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import CoreData
+import Foundation
 
 class EditProfileViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate {
     
@@ -19,14 +21,11 @@ class EditProfileViewController: UIViewController, UITextFieldDelegate, UITextVi
     @IBOutlet weak var stateTextField: UITextField!
     @IBOutlet weak var aboutTextView: UITextView!
 
-    
+    var profile: NSManagedObject?
     var activeTextField: UITextField? = nil
     var activeTextView: UITextView? = nil
     let keyboardVerticalSpacing: CGFloat = 10
     
-    @IBAction func saveButton(sender: AnyObject) {
-        
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,9 +35,135 @@ class EditProfileViewController: UIViewController, UITextFieldDelegate, UITextVi
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWasShown:", name: UIKeyboardDidShowNotification, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillBeHidden:", name: UIKeyboardWillHideNotification, object: nil)
-
+        
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let managedContext = appDelegate.managedObjectContext
+        let fetchRequest = NSFetchRequest(entityName:"User")
+        
+        do {
+            let fetchedResults = try managedContext.executeFetchRequest(fetchRequest) as? [NSManagedObject]
+            if let results = fetchedResults where results.count > 0{
+                profile = results[0]
+                firstNameTextField.text = results[0].valueForKey("firstName") as? String
+                lastNameTextField.text = results[0].valueForKey("lastName") as? String
+                ageTextField.text = results[0].valueForKey("age") as? String
+                stateTextField.text = results[0].valueForKey("state") as? String
+                cityNameTextField.text = results[0].valueForKey("city") as? String
+                emailTextField.text = results[0].valueForKey("email") as? String
+            } else {
+                print("Could not fetch profiles")
+            }
+        } catch {
+            return
+        }
+        
     }
 
+    
+    
+    
+    @IBAction func saveButton(sender: AnyObject) {
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let managedContext = appDelegate.managedObjectContext
+        
+        if profile == nil {
+            print("exist")
+            let profileEntity =  NSEntityDescription.entityForName("User", inManagedObjectContext: managedContext)
+            profile = NSManagedObject(entity: profileEntity!, insertIntoManagedObjectContext:managedContext)
+        }
+        
+        if(firstNameTextField.text == "" || lastNameTextField.text == "" || cityNameTextField.text == "" || emailTextField.text == ""||ageTextField.text == "" || stateTextField.text == ""){
+            let title = "Information required"
+            let message = "Check out your information"
+            let okText = "OK"
+            
+            let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.Alert)
+            let okButton = UIAlertAction(title: okText, style: UIAlertActionStyle.Cancel, handler: nil)
+            
+            alert.addAction(okButton)
+            presentViewController(alert, animated: true, completion: nil)
+        }
+        
+        else{
+            profile?.setValue(firstNameTextField.text, forKey: "firstName")
+            profile?.setValue(lastNameTextField.text, forKey: "lastName")
+            profile?.setValue(ageTextField.text, forKey: "age")
+            profile?.setValue(stateTextField.text, forKey: "state")
+            profile?.setValue(cityNameTextField.text, forKey: "city")
+            profile?.setValue(emailTextField.text, forKey: "email")
+            profile?.setValue(aboutTextView.text, forKey: "about")
+            
+            // Complete save and handle potential error
+            do {
+                try managedContext.save()
+            } catch let error as NSError {
+                print("Could not save \(error), \(error.userInfo)")
+            }
+            
+            let dataString = "firstName=" + firstNameTextField.text! + "&lastName=" + lastNameTextField.text! + "&age=" + ageTextField.text! + "&state=" + stateTextField.text! + "&city=" + cityNameTextField.text! + "&email=" + emailTextField.text! + "&about=" + aboutTextView.text!
+            print(dataString)
+            
+            let url = "http://phantom1.cloudapp.net/app/echo.php"
+            
+            
+            doPost(url, dataString: dataString) {
+                (response, errorStr) -> Void in
+                if let errorString = errorStr {
+                    print(errorString)
+                } else {
+                    print(response)
+                }
+            }
+            
+            self.navigationController?.popToRootViewControllerAnimated(true)
+        }
+
+    }
+    
+    func doPost(toURLString: String, dataString: String, completionHandler: (NSDictionary, String?) -> Void) {
+        let myUrl = NSURL(string: toURLString)
+        let urlRequest = NSMutableURLRequest(URL: myUrl!)
+        urlRequest.HTTPMethod = "POST"
+        
+        
+        urlRequest.HTTPBody = dataString.dataUsingEncoding(NSUTF8StringEncoding)
+        
+        let session = NSURLSession.sharedSession()
+        let task = session.dataTaskWithRequest(urlRequest, completionHandler:{
+            (data, response, error) -> Void in
+            
+            if error != nil {
+                dispatch_async(dispatch_get_main_queue(), {
+                    completionHandler(NSDictionary(), error!.localizedDescription)
+                })
+            } else {
+                self.parse(data!, completionHandler: completionHandler)
+                //print(response)
+                //return
+            }
+        })
+        task.resume()
+    }
+    
+    private func parse(jsonData: NSData, completionHandler: (NSDictionary, String?) -> Void) {
+        do {
+            let jsonResult = try NSJSONSerialization.JSONObjectWithData(jsonData, options: NSJSONReadingOptions.MutableContainers) as? NSDictionary
+            print(jsonResult)
+            dispatch_async(dispatch_get_main_queue(), {
+                completionHandler(jsonResult!, nil)
+            })
+        } catch {
+            dispatch_async(dispatch_get_main_queue(), {
+                completionHandler(NSDictionary(), "Error parsing returned JSON")
+            })
+        }
+    }
+
+    
+    
     func textFieldDidBeginEditing(textField: UITextField) {
         activeTextField = textField
         
