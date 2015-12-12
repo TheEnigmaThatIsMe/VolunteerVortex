@@ -28,7 +28,8 @@ class OpportunitiesViewController: UIViewController, UITableViewDataSource, UITa
         eventsTableView.dataSource = self
         print("Value to pass = \(valueToPass)")
         print("Passed Value = \(passedValue)")
-        //eventTitle.text = "Pooches and Booches Puppy Playground"
+        eventTitle.text = filteredEvent.eventName
+        eventDescriptionLabel.text = filteredEvent.eventDescription
         //filteredTasks = organizationCollection.tasks
         // Do any additional setup after loading the view.
     }
@@ -64,6 +65,7 @@ class OpportunitiesViewController: UIViewController, UITableViewDataSource, UITa
         taskCell.taskTitleLabel.text = task.taskName
         taskCell.taskDescriptionLabel.text = task.taskDescription
         taskCell.taskTimeLabel.text = task.taskTime
+        print(taskCell.taskTimeLabel.text)
         
         //Reasigning to cell variable
         cell = taskCell
@@ -71,7 +73,6 @@ class OpportunitiesViewController: UIViewController, UITableViewDataSource, UITa
         //print("Returning Cell")
         return cell; //return the cell
     }
-    
     
 
     /*

@@ -43,7 +43,6 @@ class OrganizationCollection{
                                     {
                                         
                                         let newTask = Task(taskName: task["name"].string!, taskTime: task["startTime"].string!, taskDescription: task["description"].string!, taskID: task["id"].int!)
-                                        
                                         taskList.append(newTask)
                                         
                                     }
@@ -75,42 +74,4 @@ class OrganizationCollection{
             print("Invalid filename/path.")
         }
     }
-    
-    /*private init(fileName:String) {
-    loadFromJSONFile(fileName)
-    }
-    
-    var organizations:[Organization] = Array<Organization>()
-    
-    private func loadFromJSONFile(fileName: String) {
-    let bundle = NSBundle.mainBundle()
-    if let path = bundle.pathForResource(fileName, ofType: "json"), jsonData = NSData(contentsOfFile: path) {
-    parseJson(jsonData)
-    }
-    }*/
-    
-    /*private func parseJson(jsonData: NSData) {
-    organizations = Array<Organization>()
-    var jsonResultWrapped: NSDictionary?
-    do {
-    jsonResultWrapped = try NSJSONSerialization.JSONObjectWithData(jsonData, options: NSJSONReadingOptions.MutableContainers) as? NSDictionary
-    } catch {
-    return
-    }
-    
-    if let jsonResult = jsonResultWrapped where jsonResult.count > 0 {
-    if let status = jsonResult["status"] as? String where status == "ok" {
-    if let organizationList = jsonResult["organizations"] as? NSArray {
-    for organization in organizationList{
-    if let organizationName = organization["name"] as? String,
-    organizationCategories = organization["categories"] as? String, organizationEmail = organization["email"] as? String, organizationPhone = organization["phone"] as? String, organizationAddress = organization["address"] as? String, organizationCity = organization["city"] as? String, organizationState = organization["state"] as? String, events = organization["events"] as? Array<String>, organizationDescription = organization["description"] as? String, organizationID = organization["id"] as? Int {
-    self.organizations.append(Organization(organizationName: organizationName,   organizationEmail: organizationEmail, organizationPhone: organizationPhone, organizationAddress: organizationAddress, organizationCity: organizationCity,
-    organizationState: organizationState,organizationCategories: organizationCategories,events: events, organizationDescription: organizationDescription, organizationID: organizationID))
-    }
-    }
-    }
-    }
-    }
-    }*/
-    
 }

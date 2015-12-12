@@ -160,7 +160,7 @@ class VolunteerViewController: UIViewController, UITableViewDataSource, UITableV
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
-        print("PREPARE YOURSELF!")
+        print("Prepare for Segue")
         //let cell = sender as! UITableViewCell
         print(segue.identifier!)
         switch (segue.identifier!)
@@ -186,7 +186,7 @@ class VolunteerViewController: UIViewController, UITableViewDataSource, UITableV
             
             
         default:
-            print("Something is wrong!")
+            print("Prepare for Segue Error!")
         }
         
         // initialize new view controller and cast it as your view controller
