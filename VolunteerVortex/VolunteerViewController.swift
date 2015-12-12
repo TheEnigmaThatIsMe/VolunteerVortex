@@ -14,7 +14,7 @@ class VolunteerViewController: UIViewController, UITableViewDataSource, UITableV
     var filteredOrganizations: [Organization]!
     var filteredEvents: [Event]!
     var filteredTasks: [Task]!
-    var valueToPass: String!
+    var valueToPass: Int = 0
     //need to get data that has been loaded or load data from json to use
     
     @IBOutlet weak var volunteerTitleLabel: UILabel!
@@ -141,40 +141,61 @@ class VolunteerViewController: UIViewController, UITableViewDataSource, UITableV
         return cell; //return the cell
     }
     
-    /*func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         print("You selected cell #\(indexPath.row)!")
         
-        // Get Cell Label
-        //let indexPath = tableView.indexPathForSelectedRow!
-        //let currentCell = tableView.cellForRowAtIndexPath(indexPath) as UITableViewCell!
-        
         valueToPass = indexPath.row
-        print("Value to pass from Volunteer View = \(valueToPass)")
-        performSegueWithIdentifier("opportunitySegue", sender: self)
-        
-    }*/
+        switch (segmentedControl.selectedSegmentIndex)
+        {
+        case 0:
+            performSegueWithIdentifier("organizationSegue", sender: self)
+        case 1:
+            performSegueWithIdentifier("opportunitySegue", sender: self)
+        case 2:
+            performSegueWithIdentifier("interestsSegue", sender: self)
+        default:
+            print("not good")
+        }
+    }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
-        if (segue.identifier == "opportunitySegue") {
+        print("Prepare for Segue")
+        //let cell = sender as! UITableViewCell
+        print(segue.identifier!)
+        switch (segue.identifier!)
+        {
+        case "opportunitySegue":
+            print("opportunity")
+            let vc = segue.destinationViewController as! OpportunitiesViewController
+            let event = filteredEvents[valueToPass]
             
-            // initialize new view controller and cast it as your view controller
-            //let viewController = segue.destinationViewController as! OpportunitiesViewController
-            // your new view controller should have property that will store passed value
-            //print("Value to Pass to View Controller = \(valueToPass)")
-            //viewController.passedValue = valueToPass
+            vc.filteredTasks = event.eventTasks;
+            vc.filteredEvent = event
+            
+            
+            vc.valueToPass = valueToPass
+        case "interestsSegue":
+            
+            let vc = segue.destinationViewController as! InterestsViewController
+            
+        case "organizationSegue":
+            
+            let vc = segue.destinationViewController as! OrganizatonViewController
+            vc.organization = filteredOrganizations[valueToPass]
+            
+            
+        default:
+            print("Prepare for Segue Error!")
         }
         
+        // initialize new view controller and cast it as your view controller
+        //let viewController = segue.destinationViewController as! OpportunitiesViewController
+        // your new view controller should have property that will store passed value
+        //print("Value to Pass to View Controller = \(valueToPass)")
+        //viewController.passedValue = valueToPass
+        
+        
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

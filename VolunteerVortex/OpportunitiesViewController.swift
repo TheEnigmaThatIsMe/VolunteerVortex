@@ -12,23 +12,25 @@ class OpportunitiesViewController: UIViewController, UITableViewDataSource, UITa
     
     let organizationCollection = OrganizationCollection.sharedInstance //get data from OrganizationCollection.swift
     
-    @IBOutlet weak var eventTitleLabel: UILabel!
+    @IBOutlet weak var eventTitle: UILabel!
     @IBOutlet weak var eventDescriptionLabel: UILabel!
     @IBOutlet weak var eventsTableView: UITableView!
     
     var valueToPass: Int = 0
     var passedValue: Int = 0
-    var filteredEvents: [Event]!
+    var filteredEvent: Event!
     var filteredTasks: [Task]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "Event Info"
         eventsTableView.delegate = self
         eventsTableView.dataSource = self
         print("Value to pass = \(valueToPass)")
         print("Passed Value = \(passedValue)")
-        eventTitleLabel.text = ""
-        filteredTasks = organizationCollection.tasks
+        eventTitle.text = filteredEvent.eventName
+        eventDescriptionLabel.text = filteredEvent.eventDescription
+        //filteredTasks = organizationCollection.tasks
         // Do any additional setup after loading the view.
     }
 
@@ -47,14 +49,6 @@ class OpportunitiesViewController: UIViewController, UITableViewDataSource, UITa
         print("number of rows \(filteredTasks.count)")
         return filteredTasks.count
     }
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        
-        var height : CGFloat
-        
-        height = 70
-        
-        return height
-    }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         //print("cellForRowAtIndexPath")
@@ -71,6 +65,7 @@ class OpportunitiesViewController: UIViewController, UITableViewDataSource, UITa
         taskCell.taskTitleLabel.text = task.taskName
         taskCell.taskDescriptionLabel.text = task.taskDescription
         taskCell.taskTimeLabel.text = task.taskTime
+        print(taskCell.taskTimeLabel.text)
         
         //Reasigning to cell variable
         cell = taskCell
@@ -78,7 +73,6 @@ class OpportunitiesViewController: UIViewController, UITableViewDataSource, UITa
         //print("Returning Cell")
         return cell; //return the cell
     }
-    
     
 
     /*
