@@ -14,6 +14,8 @@
 		805A9E511BFE5C7F003DA28E /* OrganizationCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805A9E501BFE5C7F003DA28E /* OrganizationCollection.swift */; };
 		8618A9901C10E3CA00406D91 /* TaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8618A98F1C10E3CA00406D91 /* TaskCell.swift */; };
 		8618A9921C10E5AC00406D91 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8618A9911C10E5AC00406D91 /* Task.swift */; };
+		862289961C1CD9C3001E864E /* organizationProfilePhoto.png in Resources */ = {isa = PBXBuildFile; fileRef = 862289951C1CD9C3001E864E /* organizationProfilePhoto.png */; };
+		8622899A1C1CE516001E864E /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862289991C1CE516001E864E /* RegistrationViewController.swift */; };
 		865492381BFE4DE1007008C1 /* organization.json in Resources */ = {isa = PBXBuildFile; fileRef = 865492371BFE4DE1007008C1 /* organization.json */; };
 		8662E88A1C096CF900FD2270 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8662E8891C096CF900FD2270 /* Event.swift */; };
 		8672CDE01C060D5200583B07 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8672CDDF1C060D5200583B07 /* Assets.xcassets */; };
@@ -59,6 +61,8 @@
 		805A9E501BFE5C7F003DA28E /* OrganizationCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrganizationCollection.swift; sourceTree = "<group>"; };
 		8618A98F1C10E3CA00406D91 /* TaskCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskCell.swift; sourceTree = "<group>"; };
 		8618A9911C10E5AC00406D91 /* Task.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		862289951C1CD9C3001E864E /* organizationProfilePhoto.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = organizationProfilePhoto.png; sourceTree = "<group>"; };
+		862289991C1CE516001E864E /* RegistrationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		865492371BFE4DE1007008C1 /* organization.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = organization.json; sourceTree = "<group>"; };
 		8662E8891C096CF900FD2270 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		8672CDDF1C060D5200583B07 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -110,6 +114,51 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8622898F1C1CBC3E001E864E /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				869F739C1C0288BB00C1395C /* OpportunitiesViewController.swift */,
+				869F739E1C0288D500C1395C /* InterestsViewController.swift */,
+				869F739A1C0287B800C1395C /* OrganizatonViewController.swift */,
+				FD9075CC1BEE9E2B003E14D0 /* VolunteerViewController.swift */,
+				862289991C1CE516001E864E /* RegistrationViewController.swift */,
+				FD9075CE1BEE9E3D003E14D0 /* ProfileViewController.swift */,
+				FD9075D01BEE9E50003E14D0 /* MyServiceViewController.swift */,
+				FD9075D21BEE9E5D003E14D0 /* SettingsViewController.swift */,
+				86995AD31BF0E2F000905BFC /* EditProfileViewController.swift */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		862289901C1CBC50001E864E /* Table Cell Files */ = {
+			isa = PBXGroup;
+			children = (
+				670EF4471BFBB7270087D4D5 /* OrganizationCell.swift */,
+				8618A98F1C10E3CA00406D91 /* TaskCell.swift */,
+				670EF4491BFBB7860087D4D5 /* OpportunitiesCell.swift */,
+				670EF44B1BFBB79E0087D4D5 /* InterestsCell.swift */,
+			);
+			name = "Table Cell Files";
+			sourceTree = "<group>";
+		};
+		862289911C1CBC70001E864E /* Constructors */ = {
+			isa = PBXGroup;
+			children = (
+				805A9E4E1BFE5C15003DA28E /* Organization.swift */,
+				8662E8891C096CF900FD2270 /* Event.swift */,
+				8618A9911C10E5AC00406D91 /* Task.swift */,
+			);
+			name = Constructors;
+			sourceTree = "<group>";
+		};
+		862289921C1CBCB2001E864E /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				86C078C81C09166500D875C8 /* SwiftyJSON.swift */,
+			);
+			name = "Support Files";
+			sourceTree = "<group>";
+		};
 		86D866131BEE92D8008E5558 = {
 			isa = PBXGroup;
 			children = (
@@ -133,30 +182,19 @@
 		86D8661E1BEE92D8008E5558 /* VolunteerVortex */ = {
 			isa = PBXGroup;
 			children = (
+				862289951C1CD9C3001E864E /* organizationProfilePhoto.png */,
 				8672CDDF1C060D5200583B07 /* Assets.xcassets */,
 				865492371BFE4DE1007008C1 /* organization.json */,
+				862289921C1CBCB2001E864E /* Support Files */,
 				86D8661F1BEE92D8008E5558 /* AppDelegate.swift */,
+				805A9E501BFE5C7F003DA28E /* OrganizationCollection.swift */,
 				86D866231BEE92D8008E5558 /* Main.storyboard */,
 				86D8662B1BEE92D8008E5558 /* LaunchScreen.storyboard */,
 				86D8662E1BEE92D8008E5558 /* Info.plist */,
-				869F739C1C0288BB00C1395C /* OpportunitiesViewController.swift */,
-				86C078C81C09166500D875C8 /* SwiftyJSON.swift */,
+				8622898F1C1CBC3E001E864E /* View Controllers */,
 				86D866261BEE92D8008E5558 /* VolunteerVortex.xcdatamodeld */,
-				869F739E1C0288D500C1395C /* InterestsViewController.swift */,
-				869F739A1C0287B800C1395C /* OrganizatonViewController.swift */,
-				FD9075CC1BEE9E2B003E14D0 /* VolunteerViewController.swift */,
-				FD9075CE1BEE9E3D003E14D0 /* ProfileViewController.swift */,
-				FD9075D01BEE9E50003E14D0 /* MyServiceViewController.swift */,
-				FD9075D21BEE9E5D003E14D0 /* SettingsViewController.swift */,
-				86995AD31BF0E2F000905BFC /* EditProfileViewController.swift */,
-				670EF4471BFBB7270087D4D5 /* OrganizationCell.swift */,
-				8618A98F1C10E3CA00406D91 /* TaskCell.swift */,
-				670EF4491BFBB7860087D4D5 /* OpportunitiesCell.swift */,
-				670EF44B1BFBB79E0087D4D5 /* InterestsCell.swift */,
-				805A9E4E1BFE5C15003DA28E /* Organization.swift */,
-				8662E8891C096CF900FD2270 /* Event.swift */,
-				8618A9911C10E5AC00406D91 /* Task.swift */,
-				805A9E501BFE5C7F003DA28E /* OrganizationCollection.swift */,
+				862289901C1CBC50001E864E /* Table Cell Files */,
+				862289911C1CBC70001E864E /* Constructors */,
 			);
 			path = VolunteerVortex;
 			sourceTree = "<group>";
@@ -284,6 +322,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				86D8662D1BEE92D8008E5558 /* LaunchScreen.storyboard in Resources */,
+				862289961C1CD9C3001E864E /* organizationProfilePhoto.png in Resources */,
 				865492381BFE4DE1007008C1 /* organization.json in Resources */,
 				8672CDE01C060D5200583B07 /* Assets.xcassets in Resources */,
 				86D866251BEE92D8008E5558 /* Main.storyboard in Resources */,
@@ -325,6 +364,7 @@
 				FD9075D31BEE9E5D003E14D0 /* SettingsViewController.swift in Sources */,
 				670EF4481BFBB7270087D4D5 /* OrganizationCell.swift in Sources */,
 				86C078C91C09166500D875C8 /* SwiftyJSON.swift in Sources */,
+				8622899A1C1CE516001E864E /* RegistrationViewController.swift in Sources */,
 				805A9E511BFE5C7F003DA28E /* OrganizationCollection.swift in Sources */,
 				670EF44C1BFBB79E0087D4D5 /* InterestsCell.swift in Sources */,
 				670EF44A1BFBB7860087D4D5 /* OpportunitiesCell.swift in Sources */,

@@ -20,8 +20,10 @@ class Event {
     var eventDescription: String? = ""
     var eventVolunteerLimit: Int = 0
     var eventID: Int = 0
+    var eventTasks: Array<Task>
     
-    init(organizationName: String, eventName: String, eventAddress: String, eventCity: String, eventState: String, eventStartTime: String, eventEndTime: String, eventCategories: String, eventDescription: String, eventVolunteerLimit:Int, eventID: Int) {
+    init(organizationName: String, eventName: String, eventAddress: String, eventCity: String, eventState: String, eventStartTime: String, eventEndTime: String, eventCategories: String, eventDescription: String, eventVolunteerLimit:Int, eventID: Int, eventTasks: Array<Task>) {
+        
         self.organizationName = organizationName
         self.eventName = eventName
         self.eventAddress = eventAddress
@@ -33,5 +35,8 @@ class Event {
         self.eventDescription = eventDescription
         self.eventVolunteerLimit = eventVolunteerLimit
         self.eventID = eventID
+        self.eventTasks = eventTasks
+        
     }
-}
+
+    }
