@@ -28,6 +28,7 @@
 		86D8662D1BEE92D8008E5558 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86D8662B1BEE92D8008E5558 /* LaunchScreen.storyboard */; };
 		86D866381BEE92D8008E5558 /* VolunteerVortexTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D866371BEE92D8008E5558 /* VolunteerVortexTests.swift */; };
 		86D866431BEE92D8008E5558 /* VolunteerVortexUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D866421BEE92D8008E5558 /* VolunteerVortexUITests.swift */; };
+		EEDCAFD21C1A06F200D83743 /* ContactPreferencesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDCAFD11C1A06F200D83743 /* ContactPreferencesTableViewController.swift */; };
 		FD9075CD1BEE9E2B003E14D0 /* VolunteerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9075CC1BEE9E2B003E14D0 /* VolunteerViewController.swift */; };
 		FD9075CF1BEE9E3D003E14D0 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9075CE1BEE9E3D003E14D0 /* ProfileViewController.swift */; };
 		FD9075D11BEE9E50003E14D0 /* MyServiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9075D01BEE9E50003E14D0 /* MyServiceViewController.swift */; };
@@ -79,6 +80,7 @@
 		86D8663E1BEE92D8008E5558 /* VolunteerVortexUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VolunteerVortexUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		86D866421BEE92D8008E5558 /* VolunteerVortexUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolunteerVortexUITests.swift; sourceTree = "<group>"; };
 		86D866441BEE92D8008E5558 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EEDCAFD11C1A06F200D83743 /* ContactPreferencesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactPreferencesTableViewController.swift; sourceTree = "<group>"; };
 		FD9075CC1BEE9E2B003E14D0 /* VolunteerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VolunteerViewController.swift; sourceTree = "<group>"; };
 		FD9075CE1BEE9E3D003E14D0 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		FD9075D01BEE9E50003E14D0 /* MyServiceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyServiceViewController.swift; sourceTree = "<group>"; };
@@ -148,6 +150,7 @@
 				FD9075CE1BEE9E3D003E14D0 /* ProfileViewController.swift */,
 				FD9075D01BEE9E50003E14D0 /* MyServiceViewController.swift */,
 				FD9075D21BEE9E5D003E14D0 /* SettingsViewController.swift */,
+				EEDCAFD11C1A06F200D83743 /* ContactPreferencesTableViewController.swift */,
 				86995AD31BF0E2F000905BFC /* EditProfileViewController.swift */,
 				670EF4471BFBB7270087D4D5 /* OrganizationCell.swift */,
 				8618A98F1C10E3CA00406D91 /* TaskCell.swift */,
@@ -322,6 +325,7 @@
 				FD9075D11BEE9E50003E14D0 /* MyServiceViewController.swift in Sources */,
 				8662E88A1C096CF900FD2270 /* Event.swift in Sources */,
 				86D866201BEE92D8008E5558 /* AppDelegate.swift in Sources */,
+				EEDCAFD21C1A06F200D83743 /* ContactPreferencesTableViewController.swift in Sources */,
 				FD9075D31BEE9E5D003E14D0 /* SettingsViewController.swift in Sources */,
 				670EF4481BFBB7270087D4D5 /* OrganizationCell.swift in Sources */,
 				86C078C91C09166500D875C8 /* SwiftyJSON.swift in Sources */,
