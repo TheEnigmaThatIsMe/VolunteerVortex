@@ -9,46 +9,51 @@
 		"address": "P.O. Box 591, 1483 Magna. Rd.",
 		"city": "Columbia",
 		"state": "MO",
-		"categories": "Animals",
+		"categories": "Homeless",
         "interest": "Homeless",
 		"events": [
 			{
-				"eventName": "Puppy Playground",
+				"eventName": "Net Zero House",
 				"address": "P.O. Box 947, 7315 Mauris. St.",
 				"city": "Waitara",
 				"state": "NI",
 				"startTime": "09-17-16",
 				"endTime": "08-26-16",
 				"categories": "dolor",
-                "description": "This is a test for event description",
+                "description": "Build a house that contributes zero net energy impact on the environment.",
 				"volunteerLimit": 10,
 				"id": 1,
 				"task": [{
-					"name": "Puppy Play",
-					"description": "Play with puppies for an hour.",
+					"name": "Builder",
+					"description": "Build the foundation to the house.",
 					"startTime": "3PM",
 					"id": 1
 				}]
 			},
 			{
-				"eventName": "Pooches and Booches",
+				"eventName": "Habitat Garage Sale",
 				"address": "4608 Donec Road",
 				"city": "Vienna",
 				"state": "Vienna",
 				"startTime": "02-16-15",
 				"endTime": "08-18-15",
 				"categories": "et",
-                "description": "This is a test for event description",
+                "description": "A garage sale to help raise funds for upcoming projects within the community.",
 				"volunteerLimit": 10,
 				"id": 2,
 				"task": [{
-					"name": "Puppy Play",
-					"description": "Play with puppies for an hour.",
-					"startTime": "2PM",
+					"name": "Donator",
+					"description": "If you can't help out, but want to still help then become a donator and donate any items for the garage sale!",
+					"startTime": "12PM",
 					"id": 1
-				}]
+                },
+                {
+                    "name": "Garage Staff",
+                    "description": "Help out and sell stuff for our garage sale!",
+                    "startTime": "2PM",
+                    "id": 2}]
 		}],
-		"description": "Lorem ipsum dolor sit amet, consectetuer",
+		"description": "Habitat for Humanity specializes in building homes for the homeless or other financially burdened individuals. Our homes create a unique comminuty where people can take care of each other as well as foster deeper relations with those within their community. Get out today and help out!",
 		"id": 1
 	},
     {
