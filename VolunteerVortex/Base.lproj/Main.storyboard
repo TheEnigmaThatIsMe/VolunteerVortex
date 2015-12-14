@@ -782,14 +782,14 @@
         <!--Settings-->
         <scene sceneID="MOP-uU-IpS">
             <objects>
-                <tableViewController title="Settings" id="6w9-TJ-yml" sceneMemberID="viewController">
+                <tableViewController title="Settings" id="6w9-TJ-yml" customClass="SettingsViewController" customModule="VolunteerVortex" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="bT4-AK-k2a">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="contactPrefereces" textLabel="gCq-6N-3Q7" style="IBUITableViewCellStyleDefault" id="Hqo-dm-ATN">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="contactPreferences" textLabel="gCq-6N-3Q7" style="IBUITableViewCellStyleDefault" id="Hqo-dm-ATN">
                                 <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Hqo-dm-ATN" id="12W-6r-Pza">
@@ -808,7 +808,7 @@
                                 </tableViewCellContentView>
                                 <animations/>
                                 <connections>
-                                    <segue destination="FCI-gR-K7l" kind="show" id="a6l-3y-XWN"/>
+                                    <segue destination="FCI-gR-K7l" kind="show" identifier="preferenceSegue" id="Fgt-5X-uQa"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="contactVolunteerVortex" textLabel="11U-Xj-sci" style="IBUITableViewCellStyleDefault" id="ibG-7p-GtC">
@@ -828,7 +828,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="T0u-hl-Qw0" kind="show" id="bhP-bI-Fni"/>
+                                    <segue destination="T0u-hl-Qw0" kind="show" identifier="vortexSegue" id="x5n-oE-u6C"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -993,7 +993,7 @@
         <!--Contact Preferences-->
         <scene sceneID="jcc-cE-tci">
             <objects>
-                <tableViewController title="Contact Preferences" id="FCI-gR-K7l" sceneMemberID="viewController">
+                <tableViewController title="Contact Preferences" id="FCI-gR-K7l" customClass="ContactPreferencesTableViewController" customModule="VolunteerVortex" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="72b-If-PCv">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1006,7 +1006,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qPm-5f-usR">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qPm-5f-usR">
                                             <rect key="frame" x="48" y="11" width="42" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -1033,7 +1033,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xj1-6j-LJq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1500" y="1687"/>
+            <point key="canvasLocation" x="1509" y="1667"/>
         </scene>
         <!--Contact Tap & Serve-->
         <scene sceneID="6vr-Gz-I8F">
@@ -1047,22 +1047,49 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="e8z-Nw-Dm9">
-                                <rect key="frame" x="288" y="94" width="25" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Your Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="e8z-Nw-Dm9">
+                                <rect key="frame" x="50" y="79" width="500" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Your Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="l8K-3c-uK4">
+                                <rect key="frame" x="50" y="124" width="500" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0eL-MY-P5A">
+                                <rect key="frame" x="282" y="381" width="36" height="30"/>
+                                <state key="normal" title="Send"/>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Your Comment Here" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GNK-lX-xhl">
+                                <rect key="frame" x="50" y="169" width="500" height="182"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="e8z-Nw-Dm9" firstAttribute="top" secondItem="UOd-dg-E6E" secondAttribute="bottom" constant="30" id="Xig-iZ-sK0"/>
+                            <constraint firstItem="0eL-MY-P5A" firstAttribute="top" secondItem="GNK-lX-xhl" secondAttribute="bottom" constant="30" id="E95-R7-0ew"/>
+                            <constraint firstItem="wOa-lu-RrJ" firstAttribute="top" secondItem="GNK-lX-xhl" secondAttribute="bottom" constant="200" id="IN4-Z2-MOa"/>
+                            <constraint firstItem="l8K-3c-uK4" firstAttribute="centerX" secondItem="S9a-3J-zXi" secondAttribute="centerX" id="Wpn-8G-9NI"/>
+                            <constraint firstItem="e8z-Nw-Dm9" firstAttribute="top" secondItem="UOd-dg-E6E" secondAttribute="bottom" constant="15" id="Xig-iZ-sK0"/>
+                            <constraint firstItem="GNK-lX-xhl" firstAttribute="top" secondItem="l8K-3c-uK4" secondAttribute="bottom" constant="15" id="cyU-FF-L3B"/>
+                            <constraint firstItem="0eL-MY-P5A" firstAttribute="centerX" secondItem="S9a-3J-zXi" secondAttribute="centerX" id="d3U-pj-8FN"/>
+                            <constraint firstItem="e8z-Nw-Dm9" firstAttribute="leading" secondItem="S9a-3J-zXi" secondAttribute="leadingMargin" constant="30" id="dMH-mh-Xpr"/>
+                            <constraint firstItem="GNK-lX-xhl" firstAttribute="leading" secondItem="S9a-3J-zXi" secondAttribute="leadingMargin" constant="30" id="fx5-a6-93w"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="e8z-Nw-Dm9" secondAttribute="trailing" constant="30" id="ogi-2O-Hfi"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="l8K-3c-uK4" secondAttribute="trailing" constant="30" id="omz-XP-Fuh"/>
+                            <constraint firstItem="GNK-lX-xhl" firstAttribute="centerX" secondItem="S9a-3J-zXi" secondAttribute="centerX" id="xMk-vB-pcc"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="GNK-lX-xhl" secondAttribute="trailing" constant="30" id="xnL-52-QlN"/>
+                            <constraint firstItem="l8K-3c-uK4" firstAttribute="leading" secondItem="S9a-3J-zXi" secondAttribute="leadingMargin" constant="30" id="yAn-it-zan"/>
+                            <constraint firstItem="l8K-3c-uK4" firstAttribute="top" secondItem="e8z-Nw-Dm9" secondAttribute="bottom" constant="15" id="zNf-cO-MoF"/>
                             <constraint firstItem="e8z-Nw-Dm9" firstAttribute="centerX" secondItem="S9a-3J-zXi" secondAttribute="centerX" id="zhr-nm-2HQ"/>
                         </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SLi-bz-Wxi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1390" y="2585"/>
+            <point key="canvasLocation" x="1152" y="2595"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="XJD-RR-Ju8">

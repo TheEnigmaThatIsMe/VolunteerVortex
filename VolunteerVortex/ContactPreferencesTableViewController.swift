@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ContactPreferencesTableViewController: UITableViewController {
+class ContactPreferencesTableViewController: UITableViewController{
     var preferencesArray = ["Email", "Phone", "Text"]
 
     override func viewDidLoad() {
