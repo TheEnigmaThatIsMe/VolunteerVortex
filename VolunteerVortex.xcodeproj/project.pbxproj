@@ -12,6 +12,10 @@
 		670EF44C1BFBB79E0087D4D5 /* InterestsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 670EF44B1BFBB79E0087D4D5 /* InterestsCell.swift */; };
 		805A9E4F1BFE5C15003DA28E /* Organization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805A9E4E1BFE5C15003DA28E /* Organization.swift */; };
 		805A9E511BFE5C7F003DA28E /* OrganizationCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805A9E501BFE5C7F003DA28E /* OrganizationCollection.swift */; };
+		808CCE221C1D1B5A00E138AA /* SettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 808CCE211C1D1B5A00E138AA /* SettingsCell.swift */; };
+		808CCE241C1D2B2100E138AA /* ContactUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 808CCE231C1D2B2100E138AA /* ContactUsViewController.swift */; };
+		808CCE261C1D2B3900E138AA /* ContactPreferViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 808CCE251C1D2B3900E138AA /* ContactPreferViewController.swift */; };
+		808CCE281C1E220B00E138AA /* ContactPreferenceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 808CCE271C1E220B00E138AA /* ContactPreferenceCell.swift */; };
 		8618A9901C10E3CA00406D91 /* TaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8618A98F1C10E3CA00406D91 /* TaskCell.swift */; };
 		8618A9921C10E5AC00406D91 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8618A9911C10E5AC00406D91 /* Task.swift */; };
 		862289961C1CD9C3001E864E /* organizationProfilePhoto.png in Resources */ = {isa = PBXBuildFile; fileRef = 862289951C1CD9C3001E864E /* organizationProfilePhoto.png */; };
@@ -59,6 +63,10 @@
 		670EF44B1BFBB79E0087D4D5 /* InterestsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InterestsCell.swift; sourceTree = "<group>"; };
 		805A9E4E1BFE5C15003DA28E /* Organization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Organization.swift; sourceTree = "<group>"; };
 		805A9E501BFE5C7F003DA28E /* OrganizationCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrganizationCollection.swift; sourceTree = "<group>"; };
+		808CCE211C1D1B5A00E138AA /* SettingsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsCell.swift; sourceTree = "<group>"; };
+		808CCE231C1D2B2100E138AA /* ContactUsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactUsViewController.swift; sourceTree = "<group>"; };
+		808CCE251C1D2B3900E138AA /* ContactPreferViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactPreferViewController.swift; sourceTree = "<group>"; };
+		808CCE271C1E220B00E138AA /* ContactPreferenceCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactPreferenceCell.swift; sourceTree = "<group>"; };
 		8618A98F1C10E3CA00406D91 /* TaskCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskCell.swift; sourceTree = "<group>"; };
 		8618A9911C10E5AC00406D91 /* Task.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		862289951C1CD9C3001E864E /* organizationProfilePhoto.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = organizationProfilePhoto.png; sourceTree = "<group>"; };
@@ -126,6 +134,8 @@
 				FD9075D01BEE9E50003E14D0 /* MyServiceViewController.swift */,
 				FD9075D21BEE9E5D003E14D0 /* SettingsViewController.swift */,
 				86995AD31BF0E2F000905BFC /* EditProfileViewController.swift */,
+				808CCE231C1D2B2100E138AA /* ContactUsViewController.swift */,
+				808CCE251C1D2B3900E138AA /* ContactPreferViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -137,6 +147,8 @@
 				8618A98F1C10E3CA00406D91 /* TaskCell.swift */,
 				670EF4491BFBB7860087D4D5 /* OpportunitiesCell.swift */,
 				670EF44B1BFBB79E0087D4D5 /* InterestsCell.swift */,
+				808CCE211C1D1B5A00E138AA /* SettingsCell.swift */,
+				808CCE271C1E220B00E138AA /* ContactPreferenceCell.swift */,
 			);
 			name = "Table Cell Files";
 			sourceTree = "<group>";
@@ -351,6 +363,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				869F739D1C0288BB00C1395C /* OpportunitiesViewController.swift in Sources */,
+				808CCE281C1E220B00E138AA /* ContactPreferenceCell.swift in Sources */,
 				86D866281BEE92D8008E5558 /* VolunteerVortex.xcdatamodeld in Sources */,
 				869F739B1C0287B800C1395C /* OrganizatonViewController.swift in Sources */,
 				FD9075CD1BEE9E2B003E14D0 /* VolunteerViewController.swift in Sources */,
@@ -364,12 +377,15 @@
 				FD9075D31BEE9E5D003E14D0 /* SettingsViewController.swift in Sources */,
 				670EF4481BFBB7270087D4D5 /* OrganizationCell.swift in Sources */,
 				86C078C91C09166500D875C8 /* SwiftyJSON.swift in Sources */,
+				808CCE221C1D1B5A00E138AA /* SettingsCell.swift in Sources */,
 				8622899A1C1CE516001E864E /* RegistrationViewController.swift in Sources */,
 				805A9E511BFE5C7F003DA28E /* OrganizationCollection.swift in Sources */,
 				670EF44C1BFBB79E0087D4D5 /* InterestsCell.swift in Sources */,
 				670EF44A1BFBB7860087D4D5 /* OpportunitiesCell.swift in Sources */,
 				8618A9901C10E3CA00406D91 /* TaskCell.swift in Sources */,
 				86995AD41BF0E2F000905BFC /* EditProfileViewController.swift in Sources */,
+				808CCE261C1D2B3900E138AA /* ContactPreferViewController.swift in Sources */,
+				808CCE241C1D2B2100E138AA /* ContactUsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
