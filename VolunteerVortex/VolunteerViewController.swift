@@ -33,7 +33,6 @@ class VolunteerViewController: UIViewController, UITableViewDataSource, UITableV
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Volunteer"
-        
         table.delegate = self
         table.dataSource = self
         organizationCollection.readJSON()

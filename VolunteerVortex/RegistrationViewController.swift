@@ -93,11 +93,6 @@ class RegistrationViewController: UIViewController, UITextFieldDelegate {
                     }
                 }
                 registrationSuccessful = true
-                
-                //            else{
-                //                print("Error: OrganizationID and EventID not set")
-                //                registrationSuccessful = false
-                //            }
             }
         }
             
@@ -114,7 +109,6 @@ class RegistrationViewController: UIViewController, UITextFieldDelegate {
             registeredEvents?.setValue(event.eventStartTime, forKey: "startTime")
             registeredEvents?.setValue(event.eventVolunteerLimit, forKey: "volunteersNeeded")
             registeredEvents?.setValue(event.eventState, forKey: "state")
-            //print("Registered Events: \(registeredEvents.valueForKey("organizationID"))")
             do {
                 try managedContext.save()
             } catch let error as NSError {
@@ -136,16 +130,7 @@ class RegistrationViewController: UIViewController, UITextFieldDelegate {
                 }
             }
             registrationSuccessful = true
-            
-            //            else{
-            //                print("Error: OrganizationID and EventID not set")
-            //                registrationSuccessful = false
-            //            }
         }
-//        if let profileRegistered =  NSEntityDescription.entityForName("Event", inManagedObjectContext: managedContext){
-//            let registeredEvents = NSManagedObject(entity: profileRegistered, insertIntoManagedObjectContext: managedContext)
-        
-        
         
         if(firstNameTextField.text == "" || lastNameTextField.text == "" || cityNameTextField.text == "" || emailTextField.text == ""||ageTextField.text == "" || stateTextField.text == ""){
             let title = "Information required"
