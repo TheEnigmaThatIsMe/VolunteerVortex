@@ -43,7 +43,7 @@
 				"id": 2,
 				"task": [{
 					"name": "Donator",
-					"description": "If you can't help out, but want to still help then become a donator and donate any items for the garage sale!",
+					"description": "Donate any items for the garage sale!",
 					"startTime": "12PM",
 					"id": 1
                 },
@@ -103,7 +103,7 @@
                          }]
                 }],
      "description": "Lorem ipsum dolor sit amet, consectetuer",
-     "id": 1
+     "id": 2
      }
 ]
 }

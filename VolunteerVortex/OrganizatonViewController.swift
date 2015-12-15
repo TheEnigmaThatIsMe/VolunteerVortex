@@ -23,7 +23,7 @@ class OrganizatonViewController: UIViewController, UITableViewDelegate, UITableV
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.title = "Organization Info"
         organizationTableView.dataSource = self
         organizationTableView.delegate = self
         
@@ -81,6 +81,10 @@ class OrganizatonViewController: UIViewController, UITableViewDelegate, UITableV
             print("Org2Opp")
             let vc = segue.destinationViewController as! OpportunitiesViewController
             let event = events[valueToPass]
+            vc.event = event
+            vc.organizationID = (organization?.organizationID)!
+            vc.eventID = event.eventID
+            print("OrganizationID: \(vc.organizationID) and EventID: \(vc.eventID)")
             vc.filteredTasks = event.eventTasks;
             vc.filteredEvent = event
             vc.valueToPass = valueToPass

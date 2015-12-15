@@ -15,6 +15,8 @@ class VolunteerViewController: UIViewController, UITableViewDataSource, UITableV
     var filteredEvents: [Event]!
     var filteredTasks: [Task]!
     var valueToPass: Int = 0
+    var organizationID: Int = 0
+    var eventID: Int = 0
     //need to get data that has been loaded or load data from json to use
     
     @IBOutlet weak var volunteerTitleLabel: UILabel!
@@ -31,7 +33,6 @@ class VolunteerViewController: UIViewController, UITableViewDataSource, UITableV
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Volunteer"
-        
         table.delegate = self
         table.dataSource = self
         organizationCollection.readJSON()
@@ -109,7 +110,9 @@ class VolunteerViewController: UIViewController, UITableViewDataSource, UITableV
             let event = filteredEvents[indexPath.row]
             
             //valueToPass = indexPath.row
-            
+            //organizationID = event.organizationID
+            //eventID = event.eventID
+            //print("OrganizationID: \(organizationID) and EventID: \(eventID)")
             oppCell.opportunityTitleLabel.text = event.eventName
             oppCell.opportunityDateLabel.text = event.eventStartTime
             oppCell.opportunityOrganizationLabel.text = event.organizationName
@@ -150,6 +153,8 @@ class VolunteerViewController: UIViewController, UITableViewDataSource, UITableV
         case 0:
             performSegueWithIdentifier("organizationSegue", sender: self)
         case 1:
+            organizationID = filteredEvents[valueToPass].organizationID
+            eventID = filteredEvents[valueToPass].eventID
             performSegueWithIdentifier("opportunitySegue", sender: self)
         case 2:
             performSegueWithIdentifier("interestsSegue", sender: self)
@@ -172,8 +177,9 @@ class VolunteerViewController: UIViewController, UITableViewDataSource, UITableV
             
             vc.filteredTasks = event.eventTasks;
             vc.filteredEvent = event
-            
-            
+            vc.organizationID = organizationID
+            vc.eventID = eventID
+            print("OrganizationID: \(organizationID) and EventID: \(eventID)")
             vc.valueToPass = valueToPass
         case "interestsSegue":
             
