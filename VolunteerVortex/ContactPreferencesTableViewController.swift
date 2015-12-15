@@ -1,15 +1,15 @@
 //
-//  SettingsViewController.swift
+//  ContactPreferencesTableViewController.swift
 //  VolunteerVortex
 //
-//  Created by Brendon Sexe on 12/13/15.
+//  Created by Brendon Sexe on 12/10/15.
 //  Copyright © 2015 George Gilmartin. All rights reserved.
 //
 
 import UIKit
 
-class SettingsViewController: UITableViewController
-{
+class ContactPreferencesTableViewController: UITableViewController{
+    var preferencesArray = ["Email", "Phone", "Text"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,32 +29,27 @@ class SettingsViewController: UITableViewController
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        // #warning Incomplete implementation, return the number of sections
         return 1
     }
-    
+
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        // #warning Incomplete implementation, return the number of rows
+        return 3
     }
-    
-    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 70
-    }
+
+
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        if (indexPath.row == 0){
-            let cell: UITableViewCell=UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "contactPreferences")
-            cell.textLabel?.text = "Contact Preferences"
-            return cell
-        }
-        else{
-            let cell: UITableViewCell=UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "contactVolunteerVortex")
-            cell.textLabel?.text = "Contact Volunteer Vortex"
-            return cell
-        }
+        var cell: UITableViewCell!
+        cell = tableView.dequeueReusableCellWithIdentifier("preference")
+        cell.textLabel?.text = preferencesArray[indexPath.row]
+        
+        // Configure the cell...
+
+        return cell
     }
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        if(indexPath.row == 0){performSegueWithIdentifier("preferenceSegue", sender: self)}
-        else{performSegueWithIdentifier("vortexSegue", sender: self)}
-    }
+
+
     /*
     // Override to support conditional editing of the table view.
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
