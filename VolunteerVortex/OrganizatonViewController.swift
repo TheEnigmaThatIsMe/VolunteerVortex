@@ -23,7 +23,7 @@ class OrganizatonViewController: UIViewController, UITableViewDelegate, UITableV
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.title = "Organization Info"
         organizationTableView.dataSource = self
         organizationTableView.delegate = self
         

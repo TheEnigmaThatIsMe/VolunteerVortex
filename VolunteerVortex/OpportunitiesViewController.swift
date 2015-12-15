@@ -27,14 +27,12 @@ class OpportunitiesViewController: UIViewController, UITableViewDataSource, UITa
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Event Info"
+        
         eventsTableView.delegate = self
         eventsTableView.dataSource = self
-        //print("Value to pass = \(valueToPass)")
-        //print("Passed Value = \(passedValue)")
+        
         eventTitle.text = filteredEvent.eventName
         eventDescriptionLabel.text = filteredEvent.eventDescription
-        //filteredTasks = organizationCollection.tasks
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
