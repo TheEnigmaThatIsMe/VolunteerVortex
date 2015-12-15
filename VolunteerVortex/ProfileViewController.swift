@@ -21,9 +21,6 @@ class ProfileViewController: UIViewController, UINavigationControllerDelegate, U
     @IBOutlet weak var organizationCollectionView: UICollectionView!
     @IBOutlet weak var aboutMe: UILabel!
     
-    @IBAction func editProfileButton(sender: AnyObject) {
-    }
-    
     
     
     override func viewDidLoad() {

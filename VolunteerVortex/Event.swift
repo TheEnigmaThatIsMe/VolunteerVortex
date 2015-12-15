@@ -10,6 +10,7 @@ import Foundation
 
 class Event {
     var organizationName: String? = ""
+    var organizationID: Int = 0
     var eventName: String? = ""
     var eventAddress: String? = ""
     var eventCity: String? = ""
@@ -21,10 +22,12 @@ class Event {
     var eventVolunteerLimit: Int = 0
     var eventID: Int = 0
     var eventTasks: Array<Task>
+    var registered: Bool = false
     
-    init(organizationName: String, eventName: String, eventAddress: String, eventCity: String, eventState: String, eventStartTime: String, eventEndTime: String, eventCategories: String, eventDescription: String, eventVolunteerLimit:Int, eventID: Int, eventTasks: Array<Task>) {
+    init(organizationName: String, organizationID: Int, eventName: String, eventAddress: String, eventCity: String, eventState: String, eventStartTime: String, eventEndTime: String, eventCategories: String, eventDescription: String, eventVolunteerLimit:Int, eventID: Int, eventTasks: Array<Task>, registered: Bool) {
         
         self.organizationName = organizationName
+        self.organizationID = organizationID
         self.eventName = eventName
         self.eventAddress = eventAddress
         self.eventCity = eventCity
@@ -36,7 +39,8 @@ class Event {
         self.eventVolunteerLimit = eventVolunteerLimit
         self.eventID = eventID
         self.eventTasks = eventTasks
+        self.registered = registered
         
     }
 
-    }
+}
