@@ -18,7 +18,10 @@ class OpportunitiesViewController: UIViewController, UITableViewDataSource, UITa
     
     var valueToPass: Int = 0
     var passedValue: Int = 0
+    var organizationID: Int = 0
+    var eventID: Int = 0
     var filteredEvent: Event!
+    var event: Event!
     var filteredTasks: [Task]!
     
     override func viewDidLoad() {
@@ -26,8 +29,8 @@ class OpportunitiesViewController: UIViewController, UITableViewDataSource, UITa
         self.title = "Event Info"
         eventsTableView.delegate = self
         eventsTableView.dataSource = self
-        print("Value to pass = \(valueToPass)")
-        print("Passed Value = \(passedValue)")
+        //print("Value to pass = \(valueToPass)")
+        //print("Passed Value = \(passedValue)")
         eventTitle.text = filteredEvent.eventName
         eventDescriptionLabel.text = filteredEvent.eventDescription
         //filteredTasks = organizationCollection.tasks
@@ -74,6 +77,30 @@ class OpportunitiesViewController: UIViewController, UITableViewDataSource, UITa
         return cell; //return the cell
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        print("Prepare for Registration Segue")
+        //let cell = sender as! UITableViewCell
+        print(segue.identifier!)
+        switch (segue.identifier!)
+        {
+        case "registerEvent":
+            let vc = segue.destinationViewController as! RegistrationViewController
+            vc.event = event
+            vc.eventID = eventID
+            vc.organizationID = organizationID
+        default:
+            print("Prepare for Segue Error!")
+        }
+        
+        // initialize new view controller and cast it as your view controller
+        //let viewController = segue.destinationViewController as! OpportunitiesViewController
+        // your new view controller should have property that will store passed value
+        //print("Value to Pass to View Controller = \(valueToPass)")
+        //viewController.passedValue = valueToPass
+        
+        
+    }
 
     /*
     // MARK: - Navigation

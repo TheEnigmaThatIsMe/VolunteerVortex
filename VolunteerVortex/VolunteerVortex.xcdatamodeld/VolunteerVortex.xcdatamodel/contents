@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="9057" systemVersion="14F1021" minimumToolsVersion="Automatic">
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="9525" systemVersion="15C50" minimumToolsVersion="Automatic">
     <entity name="Event" syncable="YES">
         <attribute name="address" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="category" optional="YES" attributeType="String" syncable="YES"/>
@@ -8,6 +8,7 @@
         <attribute name="eventId" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="eventName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="organizationId" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="organizationName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="startTime" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="state" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="volunteersNeeded" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
@@ -23,6 +24,10 @@
         <attribute name="phone" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="state" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="website" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="RegisteredEvents" syncable="YES">
+        <attribute name="eventID" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="organizationID" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
     </entity>
     <entity name="Tasks" syncable="YES">
         <attribute name="endTime" optional="YES" attributeType="String" syncable="YES"/>
@@ -45,12 +50,13 @@
         <attribute name="zipcode" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
     </entity>
     <entity name="Volunteer" syncable="YES">
-        <attribute name="taskId" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="eventId" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="userId" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Event" positionX="-506" positionY="-145" width="128" height="28"/>
-        <element name="Organization" positionX="-288" positionY="-180" width="128" height="195"/>
+        <element name="Event" positionX="-506" positionY="-145" width="128" height="210"/>
+        <element name="Organization" positionX="-288" positionY="-180" width="128" height="193"/>
+        <element name="RegisteredEvents" positionX="-513" positionY="-90" width="128" height="73"/>
         <element name="Tasks" positionX="-272" positionY="243" width="128" height="28"/>
         <element name="User" positionX="-108" positionY="-207" width="128" height="210"/>
         <element name="Volunteer" positionX="-279" positionY="66" width="128" height="73"/>

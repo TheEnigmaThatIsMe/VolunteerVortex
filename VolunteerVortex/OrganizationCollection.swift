@@ -31,35 +31,29 @@ class OrganizationCollection{
                             
                             for event in organization["events"].arrayValue {
                                 
-                                print("Loading Events: ...")
-                                if let organizationName = organization["name"].string, eventName = event["eventName"].string, eventAddress = event["address"].string, eventCity = event["city"].string, eventState = event["state"].string, eventStartTime = event["startTime"].string, eventEndTime = event["endTime"].string, eventCategories = event["categories"].string, eventDescription = event["description"].string, eventTasks = event["task"].array {
+                                if let eventName = event["eventName"].string, eventAddress = event["address"].string, eventCity = event["city"].string, eventState = event["state"].string, eventStartTime = event["startTime"].string, eventEndTime = event["endTime"].string, eventCategories = event["categories"].string, eventDescription = event["description"].string, eventTasks = event["task"].array {
                                     
                                     let eventVolunteerLimit = event["volunteerLimit"].intValue, eventID = event["id"].intValue
-                                    
+                                    let registered = false
                                     
                                     var taskList: [Task] = Array<Task>()
                                     print("Loading Tasks: ...")
-                                    for task in eventTasks
-                                    {
+                                    for task in eventTasks{
                                         
                                         let newTask = Task(taskName: task["name"].string!, taskTime: task["startTime"].string!, taskDescription: task["description"].string!, taskID: task["id"].int!)
                                         taskList.append(newTask)
-                                        
                                     }
-                                    //print("Finished Tasks")
+                                    
                                     self.tasks.appendContentsOf(taskList)
-                                    //print("Finish Event")
-                                    eventList.append(Event(organizationName: organizationName, eventName: eventName, eventAddress: eventAddress, eventCity: eventCity, eventState: eventState, eventStartTime: eventStartTime, eventEndTime: eventEndTime, eventCategories: eventCategories, eventDescription: eventDescription, eventVolunteerLimit: eventVolunteerLimit, eventID: eventID, eventTasks: taskList))
+                                    
+                                    eventList.append(Event(organizationName: organizationName, organizationID: organizationID, eventName: eventName, eventAddress: eventAddress, eventCity: eventCity, eventState: eventState, eventStartTime: eventStartTime, eventEndTime: eventEndTime, eventCategories: eventCategories, eventDescription: eventDescription, eventVolunteerLimit: eventVolunteerLimit, eventID: eventID, eventTasks: taskList, registered: registered))
                                 }
-                                
                             }
                             self.events.appendContentsOf(eventList)
                             
                             self.organizations.append(Organization(organizationName: organizationName, organizationEmail: organizationEmail, organizationPhone: organizationPhone, organizationAddress: organizationAddress, organizationCity: organizationCity,
                                 organizationState: organizationState,organizationCategories: organizationCategories,organizationDescription: organizationDescription, organizationID: organizationID,organizationInterest: organization["interest"].string!,organizationEvents: eventList))
-                            //print("Finish Organization")
                         }
-                        
                     }
                 }
                 else {
